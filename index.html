@@ -489,7 +489,7 @@
           <i data-lucide="instagram" class="w-4 h-4 text-amber-400"></i>
           <span id="footer-ig-text">@optibox.com.tr</span>
         </a>
-        <span class="text-cream/40">© 2026 Tüm hakları saklıdır.</span>
+        <span id="footer-secret-trigger" class="text-cream/40 select-none cursor-default">© 2026 OptiBox · Tüm hakları saklıdır.</span>
       </div>
     </div>
   </footer>
@@ -547,11 +547,36 @@
     </div>
   </div>
 
-  <!-- ==================== SOL ALT: GİZLİ DÜZENLEME MODU BUTONU ==================== -->
-  <button id="open-admin-btn" type="button" class="fixed bottom-5 left-5 z-40 flex items-center gap-2 bg-white/95 hover:bg-anthracite hover:text-white text-anthracite border border-creamLine shadow-luxury px-4 py-2.5 rounded-full text-xs font-bold transition-all">
-    <span>⚙️</span>
-    <span>Düzenleme Modu</span>
-  </button>
+  <!-- ==================== GİZLİ YÖNETİM ŞİFRE MODALI ==================== -->
+  <div id="password-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-anthracite/80 backdrop-blur-md" role="dialog" aria-modal="true">
+    <div class="w-full max-w-sm bg-white rounded-3xl border border-creamLine shadow-2xl overflow-hidden">
+      <div class="px-6 py-5 bg-emeraldDeep text-cream flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-lg">🔐</span>
+          <div>
+            <h3 class="font-display font-bold text-base leading-none">Yönetim Girişi</h3>
+            <p class="text-[11px] text-cream/70 mt-1">optibox.com.tr</p>
+          </div>
+        </div>
+        <button id="close-password-modal" type="button" aria-label="Kapat" class="p-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <form id="password-form" class="p-6 space-y-4">
+        <div>
+          <label for="admin-password-input" class="block text-xs font-bold uppercase tracking-wider text-muted mb-1.5">Yönetici Şifresi</label>
+          <input id="admin-password-input" type="password" required autocomplete="current-password" placeholder="Şifrenizi girin..." class="w-full px-4 py-3 rounded-xl bg-cream border border-creamLine text-sm text-anthracite focus:outline-none focus:border-emeraldDeep" />
+          <p id="password-error" class="hidden text-xs font-semibold text-red-600 mt-2">Hatalı şifre! Lütfen tekrar deneyin.</p>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-emeraldDeep hover:bg-emeraldRich text-white font-display font-bold text-sm shadow-md transition-colors">
+          Giriş Yap
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gizli Yerel Fotoğraf Seçici (Sadece Yönetim Panelinden Tetiklenir) -->
+  <input id="local-img-picker" type="file" multiple accept="image/*" class="hidden" />
 
   <!-- ==================== SAĞDAN AÇILAN CANLI YÖNETİM PANELİ (ADMIN DRAWER) ==================== -->
   <aside id="admin-drawer" class="drawer-closed fixed top-0 right-0 z-50 h-full w-full sm:w-[440px] bg-white shadow-2xl border-l border-creamLine flex flex-col">
@@ -680,19 +705,19 @@
           <div>
             <label class="block text-[10px] font-bold uppercase text-muted mb-1">Kısa Açıklama</label>
             <textarea id="pf-aciklama" rows="2" required class="w-full px-3 py-2 rounded-lg bg-white border border-creamLine text-xs resize-none"></textarea>
-          </div>
-          <button type="submit" class="w-full py-2.5 rounded-xl bg-emeraldDeep hover:bg-emeraldRich text-white text-xs font-bold transition-colors">
-            Listeye Uygula
-          </button>
-        </form>
-
-        <!-- Ürün Listesi -->
-        <div id="admin-product-list" class="space-y-2.5"></div>
-      </div>
-    </div>
-
-    <!-- Panel Alt Bar: Kaydet & İndir + Sıfırla -->
+    <!-- Panel Alt Bar: Yerel Fotoğraf, Güvenli Çıkış, Kaydet & İndir -->
     <div class="p-4 bg-cream border-t border-creamLine space-y-2.5 shrink-0">
+      <div class="grid grid-cols-2 gap-2">
+        <button id="local-preview-btn" type="button" class="py-2.5 px-3 rounded-xl bg-white hover:bg-creamDark border border-creamLine text-anthracite text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+          <span>📸</span>
+          <span>Fotoğraf Önizle</span>
+        </button>
+        <button id="logout-admin-btn" type="button" class="py-2.5 px-3 rounded-xl bg-white hover:bg-red-50 border border-creamLine hover:border-red-200 text-red-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+          <span>🔒</span>
+          <span>Güvenli Çıkış</span>
+        </button>
+      </div>
+
       <button id="download-json-btn" type="button" class="w-full py-3.5 px-4 rounded-xl bg-emeraldDeep hover:bg-emeraldRich text-white font-display font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all">
         <span>💾</span>
         <span>Kaydet ve veri.json İndir</span>
@@ -703,7 +728,7 @@
           İndirdiğiniz <strong>veri.json</strong> dosyasını GitHub deponuza sürükleyip bırakın; siteniz 15 saniyede güncellenir.
         </p>
         <button id="reset-default-btn" type="button" class="shrink-0 px-3 py-1.5 rounded-lg border border-creamLine bg-white hover:bg-red-50 hover:text-red-700 hover:border-red-200 text-[11px] font-semibold text-muted transition-colors">
-          🔄 Varsayılana Sıfırla
+          🔄 Sıfırla
         </button>
       </div>
     </div>
@@ -717,6 +742,12 @@
 
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
+    /* =========================================================================
+       0. YÖNETİM ŞİFRESİ (İstediğiniz zaman buradan değiştirebilirsiniz)
+       ========================================================================= */
+    const YONETIM_SIFRESI = "optibox2026";
+    const AUTH_SESSION_KEY = "optibox_admin_auth";
+
     /* =========================================================================
        1. VARSAYILAN VERİ (veri.json bulunamazsa otomatik devreye girer)
        ========================================================================= */
@@ -829,7 +860,7 @@
     let seciliKategori = "Tümü";
     let aktifRenkIndex = 0;
     let lightboxIndex = 0;
-
+    const localImageMap = {};
     // 4 Renk Serisi
     const RENK_SERILERI = [
       {
@@ -858,16 +889,17 @@
         gorsel: "optibox (14).jpeg",
         aciklama: "Zamansız koyu espresso tonu ile ahşap bankolar ve sıcak aydınlatmalı mağazalarla kusursuz uyum sağlar.",
         maddeler: ["Leke göstermeyen koyu espresso dış kaplama", "28 bölmeli pürüzsüz krem iç seperatörler", "Proje bazlı hızlı üretim avantajı"]
-      },
-      {
-        ad: "Antrasit & Beyaz",
-        altBaslik: "Antrasit Gri, Beyaz Gövde & Krom",
-        disRenk: "#1e293b",
-        icRenk: "#d9c3ae",
-        gorsel: "optibox (16).jpeg",
-        aciklama: "Modern mimarili optik mağazalar için parlak beyaz gövdeli 18 çekmeceli dolaplar ve antrasit tablalar.",
-        maddeler: ["18 çekmeceli dolap + 28'li tabla tam uyumu", "Ergonomik parlak krom kavisli kulplar", "4 kolonlu düzenli bej iç bölmeler"]
-      }
+    function resolveImgSrc(filename) {
+      if (!filename) return "";
+      const key = filename.trim().toLowerCase();
+      return localImageMap[key] || filename;
+    }
+
+    function imgHtml(filename, alt, cls = "w-full h-full object-contain") {
+      const safe = (filename || "").replace(/'/g, "\\'");
+      const src = resolveImgSrc(filename);
+      return `<img src="${src}" data-orig-src="${filename}" alt="${alt}" loading="lazy" class="${cls}" onerror="window.handleOptiBoxImgError(this, '${safe}')" />`;
+    }
     ];
 
     // 10 Fotoğraflık Galeri
@@ -1108,14 +1140,93 @@
     }
 
     /* =========================================================================
-       4. CANLI DÜZENLEME PANELİ (ADMIN DRAWER) + veri.json İNDİRME
+       4. GİZLİ ŞİFRELİ GİRİŞ + CANLI DÜZENLEME PANELİ + veri.json İNDİRME
        ========================================================================= */
     const drawer = document.getElementById("admin-drawer");
+    const passwordModal = document.getElementById("password-modal");
+    const passwordForm = document.getElementById("password-form");
+    const passwordInput = document.getElementById("admin-password-input");
+    const passwordError = document.getElementById("password-error");
     const tabSiteBtn = document.getElementById("tab-site-btn");
     const tabProdBtn = document.getElementById("tab-products-btn");
     const tabSitePanel = document.getElementById("tab-site-panel");
     const tabProdPanel = document.getElementById("tab-products-panel");
     const prodForm = document.getElementById("admin-product-form");
+
+    function isAdminAuthenticated() {
+      return sessionStorage.getItem(AUTH_SESSION_KEY) === "1";
+    }
+
+    function requestAdminAccess() {
+      if (isAdminAuthenticated()) {
+        openAdminDrawer();
+      } else {
+        passwordError.classList.add("hidden");
+        passwordInput.value = "";
+        passwordModal.classList.remove("hidden");
+        passwordModal.classList.add("flex");
+        setTimeout(() => passwordInput.focus(), 50);
+      }
+    }
+
+    function closePasswordModal() {
+      passwordModal.classList.add("hidden");
+      passwordModal.classList.remove("flex");
+    }
+
+    passwordForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (passwordInput.value === YONETIM_SIFRESI) {
+        sessionStorage.setItem(AUTH_SESSION_KEY, "1");
+        closePasswordModal();
+        openAdminDrawer();
+        showToast("Yönetim paneline giriş yapıldı.");
+      } else {
+        passwordError.classList.remove("hidden");
+        passwordInput.select();
+      }
+    });
+
+    document.getElementById("close-password-modal").addEventListener("click", closePasswordModal);
+    passwordModal.addEventListener("click", (e) => {
+      if (e.target.id === "password-modal") closePasswordModal();
+    });
+
+    // Yerel Fotoğraf Önizleme (Sadece Yönetim Panelinden)
+    const localImgPicker = document.getElementById("local-img-picker");
+    document.getElementById("local-preview-btn").addEventListener("click", () => localImgPicker.click());
+    localImgPicker.addEventListener("change", (e) => {
+      const files = Array.from(e.target.files || []);
+      if (!files.length) return;
+      files.forEach(file => {
+        localImageMap[file.name.trim().toLowerCase()] = URL.createObjectURL(file);
+      });
+      // Hero'daki sabit görselleri de güncelle
+      document.querySelectorAll("section img").forEach(img => {
+        const orig = img.getAttribute("data-orig-src") || img.getAttribute("src");
+        if (orig && localImageMap[orig.trim().toLowerCase()]) {
+          img.classList.remove("hidden");
+          img.dataset.fallback = "0";
+          const next = img.nextElementSibling;
+          if (next && next.querySelector && next.querySelector("svg")) next.remove();
+          img.src = localImageMap[orig.trim().toLowerCase()];
+        }
+      });
+      renderProducts();
+      renderColorShowcase(aktifRenkIndex);
+      renderGallery();
+      showToast(`${files.length} yerel fotoğraf canlı önizlemeye yüklendi.`);
+    });
+
+    // Güvenli Çıkış
+    document.getElementById("logout-admin-btn").addEventListener("click", () => {
+      sessionStorage.removeItem(AUTH_SESSION_KEY);
+      closeAdminDrawer();
+      if (window.location.hash === "#yonetim") {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+      showToast("Yönetim oturumu kapatıldı.");
+    });
 
     function openAdminDrawer() {
       syncAdminInputs();
@@ -1280,8 +1391,36 @@
     /* =========================================================================
        5. OLAY DİNLEYİCİLER & BAŞLANGIÇ (./veri.json Otomatik Yükleme)
        ========================================================================= */
-    document.getElementById("open-admin-btn").addEventListener("click", openAdminDrawer);
     document.getElementById("close-admin-btn").addEventListener("click", closeAdminDrawer);
+
+    // Gizli Tetikleyici 1: URL'de #yonetim değiştiğinde
+    window.addEventListener("hashchange", () => {
+      if (window.location.hash === "#yonetim") {
+        requestAdminAccess();
+      }
+    });
+
+    // Gizli Tetikleyici 2: Klavyeden Ctrl + Shift + E (Mac'te Cmd + Shift + E)
+    document.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "e") {
+        e.preventDefault();
+        requestAdminAccess();
+      }
+    });
+
+    // Gizli Tetikleyici 3: Mobilde Footer telif yazısına art arda 5 tıklama
+    let footerClickCount = 0;
+    let footerClickTimer = null;
+    document.getElementById("footer-secret-trigger").addEventListener("click", () => {
+      footerClickCount++;
+      clearTimeout(footerClickTimer);
+      if (footerClickCount >= 5) {
+        footerClickCount = 0;
+        requestAdminAccess();
+      } else {
+        footerClickTimer = setTimeout(() => { footerClickCount = 0; }, 1500);
+      }
+    });
 
     document.getElementById("modal-close-btn").addEventListener("click", closeProductModal);
     document.getElementById("product-modal").addEventListener("click", e => { if (e.target.id === "product-modal") closeProductModal(); });
@@ -1310,7 +1449,7 @@
     }));
 
     document.addEventListener("keydown", e => {
-      if (e.key === "Escape") { closeProductModal(); closeLightbox(); }
+      if (e.key === "Escape") { closeProductModal(); closeLightbox(); closePasswordModal(); }
     });
 
     async function initApp() {
@@ -1335,9 +1474,9 @@
       renderGallery();
       lucide.createIcons();
 
-      // 3. Adres #duzenle ile açıldıysa paneli otomatik aç
-      if (window.location.hash === "#duzenle") {
-        openAdminDrawer();
+      // 3. Adres #yonetim ile açıldıysa şifre ekranını aç
+      if (window.location.hash === "#yonetim") {
+        requestAdminAccess();
       }
     }
 
