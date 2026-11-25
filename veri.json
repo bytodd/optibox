@@ -1,0 +1,312 @@
+{
+  "iletisim": {
+    "telefon": "0 553 233 06 65",
+    "whatsapp": "905532330665",
+    "eposta": "info@optibox.com.tr",
+    "instagram": "@optibox.com.tr",
+    "adres": "İzmir, Türkiye · 81 İle Güvenli Kargo",
+    "calismaSaatleri": "Hafta içi 09:00–18:30 · Cumartesi 09:00–14:00",
+    "telifMetni": "© 2026 OptiBox · Tüm hakları saklıdır."
+  },
+  "hero": {
+    "rozet": "Optik Mağaza Teşhir & Depolama Sistemleri",
+    "baslik": "Optik Mağazanız İçin Düzen, Şıklık ve Prestij.",
+    "altBaslik": "Çizilmez sıcak krem süet iç kaplamalı istiflenebilir gözlük tablaları, 16 çekmeceli optik dolaplar ve mağazanıza özel ölçü teşhir sistemleri.",
+    "ctaBirincil": "Ürünleri İncele",
+    "ctaIkincil": "Hızlı Fiyat Al",
+    "istatistikler": [
+      {
+        "deger": "4+ Seri",
+        "etiket": "Özel Renk Seçeneği"
+      },
+      {
+        "deger": "%100",
+        "etiket": "Yerli Atölye Üretimi"
+      },
+      {
+        "deger": "Özel Ölçü",
+        "etiket": "Mağazaya Birebir Uyum"
+      }
+    ]
+  },
+  "marquee": [
+    "Gözlük Çekmeceleri",
+    "16'lı Çekmeceli Dolaplar",
+    "Zümrüt Yeşili Seri",
+    "Konyak Kahve Seri",
+    "Espresso Kahve Seri",
+    "Antrasit & Beyaz Seri",
+    "Özel Ölçü İmalat",
+    "optibox.com.tr"
+  ],
+  "urunler": [
+    {
+      "id": 1,
+      "kod": "OB-11",
+      "ad": "Zümrüt Yeşili 32'li Gözlük Tablası",
+      "kategori": "Teşhir Tablaları",
+      "rozet": "Öne Çıkan",
+      "renk": "Zümrüt Yeşili",
+      "olcu": "52 × 36 × 4.2 cm",
+      "kapasite": "32 Gözlük (4 × 8 Bölme)",
+      "gorseller": [
+        "optibox (11).jpeg"
+      ],
+      "aciklama": "Derin zümrüt yeşili dış kaplaması ve çizilmez sıcak krem 32 gözlü iç bölmeleriyle optik mağaza sunumlarına lüks bir görünüm katar."
+    },
+    {
+      "id": 2,
+      "kod": "OB-16",
+      "ad": "Beyaz Gövde 16 Çekmeceli Antrasit Dolap",
+      "kategori": "Çekmeceli Dolaplar",
+      "rozet": "Çok Satan",
+      "renk": "Antrasit & Beyaz",
+      "olcu": "58 × 42 × 112 cm",
+      "kapasite": "16 Çekmece · 320–448 Gözlük",
+      "gorseller": [
+        "optibox (16).jpeg",
+        "optibox (17).jpeg",
+        "optibox (20).jpeg"
+      ],
+      "aciklama": "Parlak beyaz gövde, antrasit kumaş kaplı 16 çekmece ve parlak krom kulplarla yüksek kapasiteli modern optik depolama ünitesi."
+    },
+    {
+      "id": 3,
+      "kod": "OB-12",
+      "ad": "Konyak Kahve İstiflenebilir Gözlük Tablası",
+      "kategori": "Teşhir Tablaları",
+      "rozet": "İstiflenir",
+      "renk": "Konyak Kahve",
+      "olcu": "50 × 35 × 4 cm",
+      "kapasite": "28 Gözlük (4 × 7 Bölme)",
+      "gorseller": [
+        "optibox (12).jpeg",
+        "optibox (13).jpeg",
+        "optibox (15).jpeg"
+      ],
+      "aciklama": "Sıcak konyak kahve dış yüzeyi ve doğal bej iç bölmeleriyle üst üste kaymadan istiflenen, banko sunumlarına ideal tabla."
+    },
+    {
+      "id": 4,
+      "kod": "OB-14",
+      "ad": "Espresso Koyu Kahve Gözlük Çekmecesi",
+      "kategori": "Gözlük Çekmeceleri",
+      "rozet": "Klasik Seri",
+      "renk": "Espresso Kahve",
+      "olcu": "50 × 35 × 4 cm",
+      "kapasite": "28 Gözlük (4 × 7 Bölme)",
+      "gorseller": [
+        "optibox (14).jpeg"
+      ],
+      "aciklama": "Ağırbaşlı koyu espresso dış kaplama ve kontrast krem bölmelerle ahşap ağırlıklı mağaza dekorasyonlarına kusursuz uyum sağlar."
+    },
+    {
+      "id": 5,
+      "kod": "OB-18",
+      "ad": "Antrasit Gri 28'li Modüler Gözlük Çekmecesi",
+      "kategori": "Gözlük Çekmeceleri",
+      "rozet": "Modüler",
+      "renk": "Antrasit & Beyaz",
+      "olcu": "50 × 35 × 4 cm",
+      "kapasite": "28 Gözlük (4 × 7 Bölme)",
+      "gorseller": [
+        "optibox (18).jpeg",
+        "optibox (19).jpeg"
+      ],
+      "aciklama": "Antrasit gri dış çerçevesi ve sıcak krem süet iç kaplamasıyla 16 çekmeceli dolaplarımız ve çekmece içleriyle birebir uyumludur."
+    },
+    {
+      "id": 6,
+      "kod": "OB-20",
+      "ad": "Kademeli Açılır 16'lı Optik Dolap Sistemi",
+      "kategori": "Çekmeceli Dolaplar",
+      "rozet": "Proje Ürünü",
+      "renk": "Antrasit & Beyaz",
+      "olcu": "58 × 42 × 112 cm",
+      "kapasite": "16 Çekmece · 4 Kolonlu",
+      "gorseller": [
+        "optibox (20).jpeg",
+        "optibox (16).jpeg",
+        "optibox (17).jpeg"
+      ],
+      "aciklama": "Akıcı ray mekanizması sayesinde birden fazla çekmeceyi kademeli açarak müşterilerinize onlarca modeli aynı anda sunmanızı sağlar."
+    },
+    {
+      "id": 7,
+      "kod": "OB-13",
+      "ad": "Konyak Seri Çoklu Stok & Tezgah Seti",
+      "kategori": "Özel Seriler",
+      "rozet": "Set Avantajı",
+      "renk": "Konyak Kahve",
+      "olcu": "Özel Çoklu Dizilim",
+      "kapasite": "Yüksek Stok Kapasitesi",
+      "gorseller": [
+        "optibox (13).jpeg",
+        "optibox (12).jpeg"
+      ],
+      "aciklama": "Yoğun çerçeve stoğu bulunan optik mağazaları için üst üste istiflenen çok sıralı konyak seri stok ve sunum seti."
+    },
+    {
+      "id": 8,
+      "kod": "OB-15",
+      "ad": "Konyak Kahve 3'lü Blok Mağaza Kurulum Seti",
+      "kategori": "Özel Seriler",
+      "rozet": "Yeni Mağaza",
+      "renk": "Konyak Kahve",
+      "olcu": "3 Sütunlu Modüler Blok",
+      "kapasite": "84+ Gözlük / Kat",
+      "gorseller": [
+        "optibox (15).jpeg",
+        "optibox (12).jpeg"
+      ],
+      "aciklama": "Yeni mağaza açılışları ve tezgah arkası yenilemeleri için 3'lü blok halinde üretilen avantajlı teşhir paketi."
+    }
+  ],
+  "renkSerileri": [
+    {
+      "ad": "Zümrüt Yeşili",
+      "hex": "#145338",
+      "altBaslik": "Zümrüt Yeşili & Sıcak Krem",
+      "aciklama": "Derin zümrüt yeşili dış kaplama ve sıcak krem iç yüzey, özellikle altın, metal ve kemik çerçeveleri vitrinde ön plana çıkarır.",
+      "gorsel": "optibox (11).jpeg"
+    },
+    {
+      "ad": "Konyak Kahve",
+      "hex": "#9a5837",
+      "altBaslik": "Konyak Kahve & Doğal Bej",
+      "aciklama": "Sıcak konyak kahve tonu mağazanıza samimi ve seçkin bir atmosfer kazandırır; çoklu istifleme ve blok setler için idealdir.",
+      "gorsel": "optibox (12).jpeg"
+    },
+    {
+      "ad": "Espresso Kahve",
+      "hex": "#3d261c",
+      "altBaslik": "Espresso Koyu Kahve & Krem",
+      "aciklama": "Leke göstermeyen koyu espresso dış doku ve açık krem seperatörlerle klasik ve modern optik mağazalara zamansız uyum sağlar.",
+      "gorsel": "optibox (14).jpeg"
+    },
+    {
+      "ad": "Antrasit & Beyaz",
+      "hex": "#2d3138",
+      "altBaslik": "Antrasit Gri & Parlak Beyaz",
+      "aciklama": "Minimalist optik mağazalar için parlak beyaz dolap gövdesi, antrasit çekmece önleri ve krom kulpların modern uyumu.",
+      "gorsel": "optibox (16).jpeg"
+    }
+  ],
+  "kurumsal": {
+    "baslik": "Optik Mağazaların Tercihi: OptiBox Kalitesi",
+    "istatistikler": [
+      {
+        "deger": "500+",
+        "etiket": "Optik Mağaza Referansı"
+      },
+      {
+        "deger": "81 İl",
+        "etiket": "Hasarsız Kargo Teslimatı"
+      },
+      {
+        "deger": "4+ Seri",
+        "etiket": "Özel Renk & Doku"
+      },
+      {
+        "deger": "%100",
+        "etiket": "Yerli Atölye Üretimi"
+      }
+    ],
+    "ozellikler": [
+      {
+        "ikon": "ruler",
+        "baslik": "Özel Ölçü Üretim",
+        "aciklama": "Mevcut mağaza çekmecelerinize ve tezgahlarınıza milimetrik özel ölçü imalat."
+      },
+      {
+        "ikon": "shield-check",
+        "baslik": "Çizilmez Kadife/Süet İç",
+        "aciklama": "Tüm gözler çerçeve ve camları koruyan yumuşak sıcak krem kumaşla kaplanır."
+      },
+      {
+        "ikon": "layers",
+        "baslik": "Dayanıklı Gövde",
+        "aciklama": "Üst üste istiflenmeye ve yoğun günlük mağaza kullanımına dayanıklı sağlam kasa."
+      },
+      {
+        "ikon": "truck",
+        "baslik": "Türkiye Geneli Kargo",
+        "aciklama": "Darbe emici özel ambalaj ile Türkiye'nin 81 iline hızlı ve güvenli gönderim."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "gorsel": "optibox (11).jpeg",
+      "baslik": "Zümrüt Yeşili 32'li Gözlük Tablası",
+      "kategori": "Zümrüt Seri"
+    },
+    {
+      "gorsel": "optibox (12).jpeg",
+      "baslik": "Konyak Kahve İstiflenebilir Tablalar",
+      "kategori": "Konyak Seri"
+    },
+    {
+      "gorsel": "optibox (13).jpeg",
+      "baslik": "Konyak Seri Çoklu Stok Dizilimi",
+      "kategori": "Konyak Seri"
+    },
+    {
+      "gorsel": "optibox (14).jpeg",
+      "baslik": "Espresso Koyu Kahve 28'li Çekmeceler",
+      "kategori": "Espresso Seri"
+    },
+    {
+      "gorsel": "optibox (15).jpeg",
+      "baslik": "Konyak Kahve 3'lü Blok Teşhir Seti",
+      "kategori": "Konyak Seri"
+    },
+    {
+      "gorsel": "optibox (16).jpeg",
+      "baslik": "16 Çekmeceli Beyaz-Antrasit Dolap",
+      "kategori": "Dolaplar"
+    },
+    {
+      "gorsel": "optibox (17).jpeg",
+      "baslik": "16 Çekmeceli Optik Dolap (Yan Açı)",
+      "kategori": "Dolaplar"
+    },
+    {
+      "gorsel": "optibox (18).jpeg",
+      "baslik": "Antrasit 28'li Modüler Tabla",
+      "kategori": "Antrasit Seri"
+    },
+    {
+      "gorsel": "optibox (19).jpeg",
+      "baslik": "Antrasit 28'li Tabla (Detay Açı)",
+      "kategori": "Antrasit Seri"
+    },
+    {
+      "gorsel": "optibox (20).jpeg",
+      "baslik": "Kademeli Açılır Çekmeceli Dolap",
+      "kategori": "Dolaplar"
+    }
+  ],
+  "sss": [
+    {
+      "soru": "Mevcut mağaza çekmecelerime özel ölçü üretim yapıyor musunuz?",
+      "cevap": "Evet. Çekmecenizin iç en, boy ve derinlik ölçülerini WhatsApp üzerinden paylaşmanız yeterli; tablalarınızı birebir uyumlu özel ölçüde üretiyoruz."
+    },
+    {
+      "soru": "Minimum sipariş adedi var mı?",
+      "cevap": "Standart stoklu modellerimizde tekli veya set halinde sipariş verebilirsiniz. Özel ölçü ve özel renk taleplerinde adet bilgisine göre hızlı termin veriyoruz."
+    },
+    {
+      "soru": "İç kaplama kumaşı gözlük camlarını veya çerçeveleri çizer mi?",
+      "cevap": "Hayır. Tüm tablalarımızda optik sektörüne özel, yumuşak dokulu ve çizilme yapmayan sıcak krem/bej süet-kumaş iç kaplama kullanılmaktadır."
+    },
+    {
+      "soru": "16 çekmeceli optik dolaplar kurulu mu gönderiliyor?",
+      "cevap": "Evet, dolaplarımız kullanıma hazır şekilde, köşe koruyuculu ve darbe emici özel ambalajlarla Türkiye'nin 81 iline güvenle sevk edilir."
+    },
+    {
+      "soru": "Teslimat süresi ortalama ne kadardır?",
+      "cevap": "Stokta hazır ürünlerimiz 1–2 iş günü içinde kargolanır. Özel ölçü ve yüksek adetli proje siparişleri ortalama 5–10 iş gününde teslim edilir."
+    }
+  ]
+}
