@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OptiBox | optibox.com.tr — 28'li Gözlük Tablaları & 18 Çekmeceli Optik Dolaplar</title>
+  <meta name="description" content="OptiBox (optibox.com.tr) — Optik mağazalar için 28'li istiflenebilir gözlük tablaları, 18 çekmeceli antrasit & beyaz optik dolaplar ve özel ölçü teşhir sistemleri." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Özel Renk Paleti (OptiBox Ürün Renklerinden İlhamla) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            emeraldDeep: '#0D3B2E',
+            emeraldRich: '#145340',
+            emeraldLight: '#1E6F56',
+            sand: '#FAF6F0',
+            sandDark: '#F1E9DE',
+            sandLine: '#E4D9C8',
+            cognac: '#B95E3B',
+            cognacLight: '#D97B54',
+            espresso: '#462B1E',
+            anthracite: '#1E242B',
+            muted: '#5D646B',
+          },
+          boxShadow: {
+            luxury: '0 20px 50px -15px rgba(13, 59, 46, 0.14)',
+            card: '0 10px 30px -10px rgba(30, 36, 43, 0.08)',
+            glow: '0 0 40px -10px rgba(185, 94, 59, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Genel Gövde ve optibox.com.tr Arka Plan Filigranı */
+    body {
+      background-color: #FAF6F0;
+      color: #1E242B;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='220' viewBox='0 0 340 220'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' transform='rotate(-22 170 110)' fill='%230D3B2E' fill-opacity='0.032' font-family='Plus Jakarta Sans, sans-serif' font-weight='700' font-size='22' letter-spacing='4'%3Eoptibox.com.tr%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    /* Koyu Zümrüt Bölümler İçin İnce Filigran */
+    .bg-emerald-watermark {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220' viewBox='0 0 360 220'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' transform='rotate(-20 180 110)' fill='%23FAF6F0' fill-opacity='0.038' font-family='Plus Jakarta Sans, sans-serif' font-weight='700' font-size='24' letter-spacing='5'%3Eoptibox.com.tr%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+    }
+
+    /* Kayan Şerit Animasyonu (Marquee) */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 34s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Yumuşak Yükselme Animasyonları (Scroll Reveal) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero Kartları Hafif Süzülme Efekti */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    .animate-float-slow {
+      animation: floatSlow 5.5s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: floatSlow 6.5s ease-in-out 1.4s infinite;
+    }
+
+    /* SSS Akordiyon */
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .accordion-item.open .accordion-content {
+      grid-template-rows: 1fr;
+    }
+    .accordion-inner {
+      overflow: hidden;
+    }
+    .accordion-item.open .accordion-icon {
+      transform: rotate(45deg);
+      background-color: #0D3B2E;
+      color: #FAF6F0;
+      border-color: #0D3B2E;
+    }
+
+    /* Özel Kaydırma Çubuğu */
+    ::-webkit-scrollbar {
+      width: 9px;
+      height: 9px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF6F0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C9B9A4;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0D3B2E;
+    }
+
+    /* Yazdırırken Yüzen Butonları Gizle */
+    @media print {
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="selection:bg-emeraldDeep selection:text-sand">
+
+  <!-- ==================== 1. DİNAMİK ÜST BİLGİ ÇUBUĞU ==================== -->
+  <div class="bg-emeraldDeep text-sand/90 text-xs border-b border-white/10 relative z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <!-- Sol: Canlı İstanbul Çalışma Saati & Domain -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <span class="relative flex h-2 w-2">
+          <span id="status-ping" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span id="status-core" class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+        </span>
+        <span id="status-text" class="font-medium tracking-wide">Çalışma durumu yükleniyor...</span>
+        <span class="hidden sm:inline text-white/25">|</span>
+        <span class="hidden sm:inline font-display font-semibold tracking-wider text-cognacLight">optibox.com.tr</span>
+      </div>
+
+      <!-- Sağ: İletişim & Hızlı Aksiyonlar -->
+      <div class="flex items-center gap-3.5 sm:gap-4">
+        <a href="tel:+902320000000" class="flex items-center gap-1.5 text-sand/85 hover:text-white transition-colors">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-cognacLight"></i>
+          <span>0 (232) 000 00 00</span>
+        </a>
+        <span class="hidden sm:inline text-white/20">|</span>
+        <a href="https://wa.me/905320000000?text=Merhaba%20OptiBox%2C%20%C3%BCr%C3%BCnler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 font-medium transition-colors">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          <span class="hidden xs:inline">WhatsApp</span>
+        </a>
+        <a href="https://instagram.com/optibox.com.tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hidden md:flex items-center gap-1 text-sand/80 hover:text-white transition-colors">
+          <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+          <span>@optibox</span>
+        </a>
+        <a href="#iletisim" class="hidden sm:inline-flex items-center gap-1 bg-cognac hover:bg-cognacLight text-white font-semibold px-3 py-1 rounded-full transition-colors">
+          <span>Teklif Al</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. SABİT GLASSMORPHISM NAVİGASYON ==================== -->
+  <header class="sticky top-0 z-40 bg-sand/80 backdrop-blur-xl border-b border-sandLine/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- OptiBox Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emeraldDeep to-emeraldRich text-sand flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="3.5"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="3" y1="15" x2="21" y2="15"></line>
+              <line x1="12" y1="9" x2="12" y2="21"></line>
+              <line x1="9.5" y1="6" x2="14.5" y2="6" stroke="#D97B54" stroke-width="2.2"></line>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-xl tracking-tight leading-none text-emeraldDeep">Opti<span class="text-cognac">Box</span></span>
+            <span class="text-[11px] font-medium tracking-[0.14em] text-muted mt-0.5">optibox.com.tr</span>
+          </div>
+        </a>
+
+        <!-- Masaüstü Menü -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-anthracite/80">
+          <a href="#koleksiyon" class="hover:text-emeraldDeep transition-colors">Koleksiyon</a>
+          <a href="#renk-serileri" class="hover:text-emeraldDeep transition-colors">Renk Serileri</a>
+          <a href="#neden-biz" class="hover:text-emeraldDeep transition-colors">Neden Biz</a>
+          <a href="#surec" class="hover:text-emeraldDeep transition-colors">Süreç</a>
+          <a href="#galeri" class="hover:text-emeraldDeep transition-colors">Galeri</a>
+          <a href="#sss" class="hover:text-emeraldDeep transition-colors">SSS</a>
+          <a href="#iletisim" class="hover:text-emeraldDeep transition-colors">İletişim</a>
+        </nav>
+
+        <!-- Sağ CTA & Mobil Menü Butonu -->
+        <div class="flex items-center gap-3">
+          <a href="#iletisim" class="hidden sm:inline-flex items-center gap-2 bg-emeraldDeep hover:bg-emeraldRich text-sand text-sm font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-luxury transition-all duration-300">
+            <span>Hızlı Teklif Al</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-cognacLight"></i>
+          </a>
+
+          <button id="mobile-menu-btn" type="button" aria-label="Menüyü Aç" class="lg:hidden p-2.5 rounded-2xl border border-sandLine bg-white text-emeraldDeep hover:bg-sandDark transition-colors">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobil Açılır Menü -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-sandLine bg-sand/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-1.5 shadow-luxury">
+      <a href="#koleksiyon" class="mobile-nav-link block px-4 py-3 rounded-2xl text-sm font-semibold text-anthracite hover:bg-sandDark">Koleksiyon</a>
+      <a href="#renk-serileri" class="mobile-nav-link block px-4 py-3 rounded-2xl text-sm font-semibold text-anthracite hover:bg-sandDark">Renk Serileri</a>
+      <a href="#neden-biz" class="mobile-nav-link block px-4 py-3 rounded-2xl text-sm font-semibold text-anthracite hover:bg-sandDark">Neden Biz</a>
+      <a href="#surec" class="mobile-nav-link block px-4 py-3 rounded-2xl text-sm font-semibold text-anthracite hover:bg-sandDark">Süreç</a>
+      <a href="#galeri" class="mobile-nav-link block px-4 py-3 rounded-2xl text-sm font-semibold text-anthracite hover:bg-sandDark">Galeri</a>
+      <a href="#sss" class="mobile-nav-link block px-4 py-3 rounded-2xl text-sm font-semibold text-anthracite hover:bg-sandDark">SSS</a>
+      <a href="#iletisim" class="mobile-nav-link block px-4 py-3 rounded-2xl text-sm font-semibold text-anthracite hover:bg-sandDark">İletişim</a>
+      <div class="pt-3">
+        <a href="#iletisim" class="mobile-nav-link flex items-center justify-center gap-2 w-full bg-emeraldDeep text-sand text-sm font-semibold px-5 py-3.5 rounded-full">
+          <span>Hızlı Teklif Al</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 3. CANLI EDİTORYAL HERO BÖLÜMÜ ==================== -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-emeraldDeep via-emeraldRich to-[#0A2E24] text-sand pt-12 pb-16 sm:pt-20 sm:pb-24 bg-emerald-watermark">
+      <!-- Dekoratif Parıltılar -->
+      <div class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-cognac/20 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-24 right-0 w-[30rem] h-[30rem] rounded-full bg-emeraldLight/25 blur-3xl"></div>
+
+      <!-- Dev Editoryal "optibox.com.tr" Arka Plan Yazısı -->
+      <div aria-hidden="true" class="pointer-events-none select-none absolute inset-x-0 bottom-2 sm:bottom-0 flex justify-center overflow-hidden">
+        <span class="font-display font-extrabold text-[15vw] lg:text-[11.5rem] leading-none tracking-tighter text-white/[0.04] whitespace-nowrap">
+          optibox.com.tr
+        </span>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+          <!-- Sol Kolon: Başlık, Açıklama, CTA, Metrikler -->
+          <div class="lg:col-span-6 space-y-7 reveal">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold text-sand">
+              <span class="w-2 h-2 rounded-full bg-cognacLight animate-pulse"></span>
+              <span>OptiBox · Yeni Nesil Optik Teşhir & Depolama</span>
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.55rem] font-extrabold leading-[1.06] tracking-tight text-white">
+              Optik Mağazanız İçin <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F5DFC4] via-cognacLight to-[#F0B795]">Düzen, Şıklık</span> ve Prestij.
+            </h1>
+
+            <p class="text-base sm:text-lg text-sand/80 leading-relaxed max-w-xl">
+              Çizilmez sıcak bej iç kaplamalı <strong class="text-white font-semibold">28'li istiflenebilir gözlük tablaları</strong> ve krom kulplu <strong class="text-white font-semibold">18 çekmeceli optik dolaplarla</strong> koleksiyonunuzu güvenle koruyun, mağazanıza seçkin bir mimari kimlik kazandırın.
+            </p>
+
+            <!-- İkili CTA Butonları -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-1">
+              <a href="#koleksiyon" class="inline-flex items-center justify-center gap-2.5 bg-cognac hover:bg-cognacLight text-white text-sm sm:text-base font-semibold px-7 py-4 rounded-full shadow-glow transition-all duration-300 hover:-translate-y-0.5">
+                <span>Koleksiyonu Keşfet</span>
+                <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+              </a>
+              <a href="https://wa.me/905320000000?text=Merhaba%20OptiBox%2C%2028%27li%20g%C3%B6zl%C3%BCk%20tablalar%C4%B1%20ve%2018%20%C3%A7ekmeceli%20optik%20dolaplar%20hakk%C4%B1nda%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 text-sm sm:text-base font-semibold px-6 py-4 rounded-full transition-all duration-300">
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-300"></i>
+                <span>WhatsApp ile Hızlı Teklif</span>
+              </a>
+            </div>
+
+            <!-- 4 Güven Metriği -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/15">
+              <div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-white">28'li</div>
+                <div class="text-xs text-sand/70 mt-0.5">Modüler Bölmeler</div>
+              </div>
+              <div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-white">18 Çekmece</div>
+                <div class="text-xs text-sand/70 mt-0.5">Optik Dolaplar</div>
+              </div>
+              <div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-cognacLight">4 Seri</div>
+                <div class="text-xs text-sand/70 mt-0.5">Özel Renk Tonu</div>
+              </div>
+              <div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-white">81 İl</div>
+                <div class="text-xs text-sand/70 mt-0.5">Türkiye Kargo</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sağ Kolon: Canlı 3 Fotoğraflı Bento Vitrin -->
+          <div class="lg:col-span-6 reveal" style="transition-delay: 120ms;">
+            <div class="grid grid-cols-12 gap-3.5 sm:gap-4 items-stretch">
+
+              <!-- Büyük Ana Kart: 18 Çekmeceli Beyaz/Antrasit Dolap -->
+              <div class="col-span-7 relative group rounded-3xl bg-white p-3 sm:p-4 shadow-luxury border border-white/40 flex flex-col justify-between overflow-hidden animate-float-slow">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emeraldDeep text-sand">OB-16 · Çok Satan</span>
+                  <span class="text-[11px] font-semibold text-muted">18 Çekmece</span>
+                </div>
+                <div class="relative rounded-2xl bg-sand/70 overflow-hidden aspect-[4/5] flex items-center justify-center">
+                  <img
+                    src="optibox (16).jpeg"
+                    data-filename="optibox (16).jpeg"
+                    alt="Beyaz Gövde 18 Çekmeceli Antrasit Optik Dolap"
+                    class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                    onerror="window.handleOptiBoxImgError(this, 'optibox (16).jpeg')"
+                  />
+                </div>
+                <div class="mt-2.5 flex items-center justify-between">
+                  <div>
+                    <div class="font-display text-xs sm:text-sm font-bold text-anthracite leading-tight">18 Çekmeceli Optik Dolap</div>
+                    <div class="text-[11px] text-muted">Krom Kulp · Antrasit Yüzey</div>
+                  </div>
+                  <a href="#koleksiyon" class="w-8 h-8 rounded-full bg-sandDark text-emeraldDeep flex items-center justify-center hover:bg-emeraldDeep hover:text-white transition-colors shrink-0" aria-label="Dolabı İncele">
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Sağ İkili Sütun: Zümrüt 28'li & Konyak 28'li -->
+              <div class="col-span-5 flex flex-col gap-3.5 sm:gap-4">
+                <!-- Zümrüt Yeşili 28'li Tabla -->
+                <div class="relative group rounded-3xl bg-white p-3 shadow-luxury border border-white/40 flex-1 flex flex-col justify-between animate-float-delayed">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-emeraldDeep">
+                      <span class="w-2 h-2 rounded-full bg-emeraldDeep"></span> Zümrüt
+                    </span>
+                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-sandDark text-anthracite">28 Göz</span>
+                  </div>
+                  <div class="relative rounded-2xl bg-sand/70 overflow-hidden aspect-[4/3] flex items-center justify-center">
+                    <img
+                      src="optibox (11).jpeg"
+                      data-filename="optibox (11).jpeg"
+                      alt="Zümrüt Yeşili 28'li Gözlük Tablası"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onerror="window.handleOptiBoxImgError(this, 'optibox (11).jpeg')"
+                    />
+                  </div>
+                  <div class="mt-2 font-display text-xs font-bold text-anthracite">Zümrüt 28'li Tabla</div>
+                </div>
+
+                <!-- Konyak Kahve İstiflenebilir Tablalar -->
+                <div class="relative group rounded-3xl bg-white p-3 shadow-luxury border border-white/40 flex-1 flex flex-col justify-between">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-cognac">
+                      <span class="w-2 h-2 rounded-full bg-cognac"></span> Konyak
+                    </span>
+                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cognac/10 text-cognac">İstiflenir</span>
+                  </div>
+                  <div class="relative rounded-2xl bg-sand/70 overflow-hidden aspect-[4/3] flex items-center justify-center">
+                    <img
+                      src="optibox (12).jpeg"
+                      data-filename="optibox (12).jpeg"
+                      alt="Konyak Kahve 28'li İstiflenebilir Gözlük Tablası"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onerror="window.handleOptiBoxImgError(this, 'optibox (12).jpeg')"
+                    />
+                  </div>
+                  <div class="mt-2 font-display text-xs font-bold text-anthracite">Konyak 28'li Seri</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. SONSUZ KAYAN MARQUEE ŞERİDİ ==================== -->
+    <section class="bg-anthracite text-sand border-y border-cognac/30 py-4 overflow-hidden select-none" aria-label="Öne Çıkan Özellikler">
+      <div class="marquee-track">
+        <div class="flex items-center gap-8 pr-8 text-sm sm:text-base font-display font-semibold tracking-wide whitespace-nowrap">
+          <span class="text-cognacLight">✦</span><span>28'li Gözlük Tablaları</span>
+          <span class="text-cognacLight">✦</span><span>18 Çekmeceli Optik Dolaplar</span>
+          <span class="text-cognacLight">✦</span><span>Zümrüt Yeşili Seri</span>
+          <span class="text-cognacLight">✦</span><span>Konyak Kahve Seri</span>
+          <span class="text-cognacLight">✦</span><span>Antrasit & Beyaz Seri</span>
+          <span class="text-cognacLight">✦</span><span>Espresso Kahve Seri</span>
+          <span class="text-cognacLight">✦</span><span>Kadife & Kumaş İç Kaplama</span>
+          <span class="text-cognacLight">✦</span><span class="text-cognacLight font-bold">optibox.com.tr</span>
+        </div>
+        <div class="flex items-center gap-8 pr-8 text-sm sm:text-base font-display font-semibold tracking-wide whitespace-nowrap" aria-hidden="true">
+          <span class="text-cognacLight">✦</span><span>28'li Gözlük Tablaları</span>
+          <span class="text-cognacLight">✦</span><span>18 Çekmeceli Optik Dolaplar</span>
+          <span class="text-cognacLight">✦</span><span>Zümrüt Yeşili Seri</span>
+          <span class="text-cognacLight">✦</span><span>Konyak Kahve Seri</span>
+          <span class="text-cognacLight">✦</span><span>Antrasit & Beyaz Seri</span>
+          <span class="text-cognacLight">✦</span><span>Espresso Kahve Seri</span>
+          <span class="text-cognacLight">✦</span><span>Kadife & Kumaş İç Kaplama</span>
+          <span class="text-cognacLight">✦</span><span class="text-cognacLight font-bold">optibox.com.tr</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. BÖLÜM 01 — ÜRÜN KOLEKSİYONU ==================== -->
+    <section id="koleksiyon" class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Başlık & Filtreler -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 reveal">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-cognac mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-emeraldDeep text-sand">01</span>
+              <span>Ürün Koleksiyonu</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-emeraldDeep leading-tight">
+              Mağazanıza Özel Üretilen Teşhir Sistemleri
+            </h2>
+            <p class="text-muted mt-3 text-base sm:text-lg">
+              Her biri optik sektörünün ihtiyaçlarına göre tasarlanmış 28'li tablalar, 18 çekmeceli dolaplar ve toptan stok setleri. Detaylı teknik bilgi ve tüm açılar için ürün kartlarına tıklayın.
+            </p>
+          </div>
+
+          <!-- Kategori Filtreleri + Sayı Göstergesi -->
+          <div class="flex flex-col items-start lg:items-end gap-3">
+            <div id="catalog-filters" class="flex flex-wrap gap-2" role="tablist" aria-label="Ürün Kategorileri">
+              <button data-filter="Tümü" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-emeraldDeep text-sand shadow-md transition-all">Tümü</button>
+              <button data-filter="Çekmeceli Dolaplar" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-anthracite border border-sandLine hover:border-emeraldDeep transition-all">Çekmeceli Dolaplar</button>
+              <button data-filter="28'li Tablalar" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-anthracite border border-sandLine hover:border-emeraldDeep transition-all">28'li Tablalar</button>
+              <button data-filter="Toptan Setler" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-anthracite border border-sandLine hover:border-emeraldDeep transition-all">Toptan Setler</button>
+            </div>
+            <div class="flex items-center gap-3 w-full lg:w-auto">
+              <div class="relative flex-1 lg:w-64">
+                <i data-lucide="search" class="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                <input id="product-search" type="text" placeholder="Model, renk veya kod ara..." class="w-full pl-10 pr-4 py-2 rounded-full bg-white border border-sandLine text-sm text-anthracite placeholder:text-muted/70 focus:outline-none focus:border-emeraldDeep transition-colors" />
+              </div>
+              <span id="product-count" class="text-xs font-semibold text-emeraldDeep bg-sandDark px-3 py-2 rounded-full shrink-0">8 Ürün</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ürün Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- JavaScript ile URUNLER dizisinden dinamik oluşturulur -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. BÖLÜM 02 — İNTERAKTİF RENK & DOKU SERİLERİ ==================== -->
+    <section id="renk-serileri" class="py-20 sm:py-28 bg-sandDark/75 border-y border-sandLine">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-cognac mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-emeraldDeep text-sand">02</span>
+              <span>İnteraktif Renk & Doku Serileri</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-emeraldDeep">
+              Mağaza Konseptinize Uygun 4 Özel Seri
+            </h2>
+          </div>
+          <p class="text-sm text-muted max-w-md">
+            Aşağıdaki renk serilerinden birini seçerek gerçek ürün görünümünü, iç-dış doku uyumunu ve öne çıkan özellikleri canlı inceleyin.
+          </p>
+        </div>
+
+        <!-- Renk Seçici Sekmeler -->
+        <div id="color-tabs" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 reveal">
+          <!-- JS ile doldurulur -->
+        </div>
+
+        <!-- Büyük İnteraktif Renk Vitrin Kartı -->
+        <div class="bg-white rounded-[2rem] border border-sandLine shadow-luxury overflow-hidden reveal">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            <!-- Sol Büyük Görsel -->
+            <div class="lg:col-span-7 bg-gradient-to-br from-sand via-white to-sandDark p-6 sm:p-10 flex items-center justify-center relative min-h-[320px] sm:min-h-[420px]">
+              <span id="color-showcase-badge" class="absolute top-5 left-5 z-10 text-xs font-bold px-3.5 py-1.5 rounded-full bg-emeraldDeep text-sand shadow-sm">
+                Zümrüt Yeşili Seri
+              </span>
+              <div id="color-showcase-media" class="w-full max-w-lg rounded-2xl overflow-hidden shadow-card bg-white p-2">
+                <!-- Dinamik görsel -->
+              </div>
+            </div>
+
+            <!-- Sağ Bilgiler -->
+            <div class="lg:col-span-5 p-7 sm:p-10 flex flex-col justify-between bg-white">
+              <div class="space-y-5">
+                <div class="flex items-center gap-3">
+                  <div id="color-swatch-outer" class="w-10 h-10 rounded-2xl border-2 border-white shadow-md"></div>
+                  <div id="color-swatch-inner" class="w-10 h-10 rounded-2xl border-2 border-sandLine shadow-sm -ml-5"></div>
+                  <span id="color-pair-label" class="text-xs font-semibold uppercase tracking-wider text-muted ml-1">Dış & İç Doku Uyumu</span>
+                </div>
+
+                <h3 id="color-showcase-title" class="font-display text-2xl sm:text-3xl font-extrabold text-anthracite">
+                  Zümrüt Yeşili & Sıcak Krem
+                </h3>
+
+                <p id="color-showcase-desc" class="text-sm sm:text-base text-muted leading-relaxed">
+                  Açıklama
+                </p>
+
+                <ul id="color-showcase-points" class="space-y-2.5 pt-2 text-sm text-anthracite font-medium">
+                  <!-- Dinamik maddeler -->
+                </ul>
+              </div>
+
+              <div class="pt-7 mt-7 border-t border-sandLine flex flex-wrap items-center gap-3">
+                <a id="color-showcase-wa" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 bg-emeraldDeep hover:bg-emeraldRich text-sand text-sm font-semibold px-6 py-3.5 rounded-full transition-colors">
+                  <i data-lucide="message-circle" class="w-4 h-4 text-emerald-300"></i>
+                  <span>Bu Seri İçin Teklif Al</span>
+                </a>
+                <button id="color-showcase-open-modal" type="button" class="inline-flex items-center justify-center gap-1.5 px-5 py-3.5 rounded-full border border-sandLine bg-sand hover:bg-sandDark text-anthracite text-sm font-semibold transition-colors">
+                  <span>Ürünü Gör</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. BÖLÜM 03 — NEDEN OPTİBOX? (KOYU ZÜMRÜT BENTO) ==================== -->
+    <section id="neden-biz" class="py-20 sm:py-28 bg-emeraldDeep text-sand relative overflow-hidden bg-emerald-watermark">
+      <div class="pointer-events-none absolute top-0 right-0 w-[28rem] h-[28rem] rounded-full bg-cognac/15 blur-3xl"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-14 reveal">
+          <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-cognacLight mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-white/10 text-sand">03</span>
+            <span>Neden OptiBox?</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+            Her Detayda Optik Mağaza Mühendisliği
+          </h2>
+          <p class="text-sand/75 mt-3 text-base sm:text-lg">
+            Sadece gözlük saklamak için değil; müşterinize güven veren, düzenli ve prestijli bir satış deneyimi sunmak için üretiyoruz.
+          </p>
+        </div>
+
+        <!-- 4 Lüks Bento Özellik Kartı -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <div class="rounded-3xl bg-white/[0.06] backdrop-blur-md border border-white/10 p-7 hover:bg-white/[0.11] hover:border-cognacLight/40 transition-all duration-300 reveal">
+            <div class="w-12 h-12 rounded-2xl bg-cognac/20 border border-cognacLight/30 text-cognacLight flex items-center justify-center mb-6">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2.5">Çizilmez Bej İç Kaplama</h3>
+            <p class="text-sm text-sand/75 leading-relaxed">
+              Yumuşak dokulu, toz tutmayan sıcak krem-bej iç kumaş kaplaması, optik camları ve asetat çerçeveleri çizilmelere karşı %100 korur.
+            </p>
+          </div>
+
+          <div class="rounded-3xl bg-white/[0.06] backdrop-blur-md border border-white/10 p-7 hover:bg-white/[0.11] hover:border-cognacLight/40 transition-all duration-300 reveal" style="transition-delay: 80ms;">
+            <div class="w-12 h-12 rounded-2xl bg-emeraldLight/30 border border-emerald-400/30 text-emerald-300 flex items-center justify-center mb-6">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2.5">İstiflenebilir Modüler Tasarım</h3>
+            <p class="text-sm text-sand/75 leading-relaxed">
+              28'li tablalar kaymadan üst üste istiflenir; hem banko üstü sunumda hem de arka depo arşivlemesinde yerden maksimum tasarruf sağlar.
+            </p>
+          </div>
+
+          <div class="rounded-3xl bg-white/[0.06] backdrop-blur-md border border-white/10 p-7 hover:bg-white/[0.11] hover:border-cognacLight/40 transition-all duration-300 reveal" style="transition-delay: 160ms;">
+            <div class="w-12 h-12 rounded-2xl bg-cognac/20 border border-cognacLight/30 text-cognacLight flex items-center justify-center mb-6">
+              <i data-lucide="layout-grid" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2.5">Krom Kulplu 18 Çekmeceli Dolaplar</h3>
+            <p class="text-sm text-sand/75 leading-relaxed">
+              Parlak beyaz dış gövde, antrasit kumaş çekmece önleri ve ergonomik kavisli krom kulplarla tek dolapta 500'e yakın gözlük kapasitesi.
+            </p>
+          </div>
+
+          <div class="rounded-3xl bg-white/[0.06] backdrop-blur-md border border-white/10 p-7 hover:bg-white/[0.11] hover:border-cognacLight/40 transition-all duration-300 reveal" style="transition-delay: 240ms;">
+            <div class="w-12 h-12 rounded-2xl bg-emeraldLight/30 border border-emerald-400/30 text-emerald-300 flex items-center justify-center mb-6">
+              <i data-lucide="ruler" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2.5">Mağazaya Özel Ölçü & Renk</h3>
+            <p class="text-sm text-sand/75 leading-relaxed">
+              Zümrüt, Konyak, Espresso ve Antrasit serilerinin yanında mağazanızın mevcut çekmece ölçülerine birebir özel üretim yapıyoruz.
+            </p>
+          </div>
+        </div>
+
+        <!-- Animasyonlu Sayaç Şeridi -->
+        <div class="mt-14 pt-12 border-t border-white/15 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center reveal">
+          <div>
+            <div class="font-display text-4xl sm:text-5xl font-extrabold text-white">
+              <span class="counter" data-target="500">0</span><span class="text-cognacLight">+</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-sand/75 mt-2 uppercase tracking-wider">Optik Mağaza Referansı</div>
+          </div>
+          <div>
+            <div class="font-display text-4xl sm:text-5xl font-extrabold text-white">
+              <span class="counter" data-target="28">0</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-sand/75 mt-2 uppercase tracking-wider">Gözlü Standart Tabla</div>
+          </div>
+          <div>
+            <div class="font-display text-4xl sm:text-5xl font-extrabold text-white">
+              <span class="counter" data-target="4">0</span><span class="text-cognacLight">+</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-sand/75 mt-2 uppercase tracking-wider">Özel Renk Seçeneği</div>
+          </div>
+          <div>
+            <div class="font-display text-4xl sm:text-5xl font-extrabold text-white">
+              <span class="counter" data-target="81">0</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-sand/75 mt-2 uppercase tracking-wider">İl Güvenli Kargo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. BÖLÜM 04 — SİPARİŞ YOLCULUĞUNUZ (5 ADIM) ==================== -->
+    <section id="surec" class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-cognac mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-emeraldDeep text-sand">04</span>
+              <span>Sipariş Yolculuğunuz</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-emeraldDeep">
+              Fikirden Mağaza Teslimatına 5 Net Adım
+            </h2>
+          </div>
+          <a href="https://wa.me/905320000000?text=Merhaba%20OptiBox%2C%20sipari%C5%9F%20s%C3%BCreci%20ve%20%C3%B6l%C3%A7%C3%BClendirme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-cognac hover:text-emeraldDeep transition-colors">
+            <span>WhatsApp'tan Süreci Başlat</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 reveal">
+          <!-- Adım 01 -->
+          <div class="bg-white rounded-3xl border border-sandLine p-6 shadow-card hover:-translate-y-1 transition-transform">
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-display text-2xl font-extrabold text-emeraldDeep">01</span>
+              <span class="w-9 h-9 rounded-xl bg-sandDark text-cognac flex items-center justify-center"><i data-lucide="message-square" class="w-4 h-4"></i></span>
+            </div>
+            <h3 class="font-display text-base font-bold text-anthracite mb-2">İletişim</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed">WhatsApp veya teklif formu üzerinden ihtiyacınızı ve adet bilgisini paylaşın.</p>
+          </div>
+
+          <!-- Adım 02 -->
+          <div class="bg-white rounded-3xl border border-sandLine p-6 shadow-card hover:-translate-y-1 transition-transform">
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-display text-2xl font-extrabold text-emeraldDeep">02</span>
+              <span class="w-9 h-9 rounded-xl bg-sandDark text-cognac flex items-center justify-center"><i data-lucide="palette" class="w-4 h-4"></i></span>
+            </div>
+            <h3 class="font-display text-base font-bold text-anthracite mb-2">Model & Renk Seçimi</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed">Zümrüt, Konyak, Espresso veya Antrasit serilerinden mağazanıza uygun olanı seçin.</p>
+          </div>
+
+          <!-- Adım 03 -->
+          <div class="bg-white rounded-3xl border border-sandLine p-6 shadow-card hover:-translate-y-1 transition-transform">
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-display text-2xl font-extrabold text-emeraldDeep">03</span>
+              <span class="w-9 h-9 rounded-xl bg-sandDark text-cognac flex items-center justify-center"><i data-lucide="ruler" class="w-4 h-4"></i></span>
+            </div>
+            <h3 class="font-display text-base font-bold text-anthracite mb-2">Ölçülendirme</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed">Standart 28'li ölçüler veya mevcut dolaplarınıza özel birebir ölçülendirme yapılır.</p>
+          </div>
+
+          <!-- Adım 04 -->
+          <div class="bg-white rounded-3xl border border-sandLine p-6 shadow-card hover:-translate-y-1 transition-transform">
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-display text-2xl font-extrabold text-emeraldDeep">04</span>
+              <span class="w-9 h-9 rounded-xl bg-sandDark text-cognac flex items-center justify-center"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+            </div>
+            <h3 class="font-display text-base font-bold text-anthracite mb-2">Özenli Üretim</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed">Bölmeler, dış kaplamalar ve krom kulplar kalite kontrolünden geçerek hazırlanır.</p>
+          </div>
+
+          <!-- Adım 05 -->
+          <div class="bg-emeraldDeep text-sand rounded-3xl border border-emeraldRich p-6 shadow-luxury hover:-translate-y-1 transition-transform">
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-display text-2xl font-extrabold text-cognacLight">05</span>
+              <span class="w-9 h-9 rounded-xl bg-white/10 text-emerald-300 flex items-center justify-center"><i data-lucide="truck" class="w-4 h-4"></i></span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white mb-2">Güvenli Teslimat</h3>
+            <p class="text-xs sm:text-sm text-sand/80 leading-relaxed">Darbe korumalı özel ambalajla Türkiye'nin 81 iline hasarsız ve hızlı teslimat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. BÖLÜM 05 — ÜRÜN GALERİSİ (10 AÇI & LIGHTBOX) ==================== -->
+    <section id="galeri" class="py-20 sm:py-28 bg-sandDark/65 border-y border-sandLine">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-cognac mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-emeraldDeep text-sand">05</span>
+              <span>Ürün Galerisi</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-emeraldDeep">
+              Üretimden Yakın Plan Detaylar
+            </h2>
+            <p class="text-muted mt-2 text-base">
+              Tüm 10 ürün açısını büyük ekranda incelemek için herhangi bir görsele tıklayın.
+            </p>
+          </div>
+          <span class="text-xs font-semibold text-emeraldDeep bg-white border border-sandLine px-4 py-2 rounded-full self-start md:self-auto">
+            10 Farklı Ürün Açısı · Tam Ekran Önizleme
+          </span>
+        </div>
+
+        <!-- 10 Fotoğraflık Galeri Grid -->
+        <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 reveal">
+          <!-- JavaScript ile GALERI_GORSELLERI dizisinden oluşturulur -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. BÖLÜM 06 — SSS & İLETİŞİM / TEKLİF FORMU ==================== -->
+    <section id="sss" class="py-20 sm:py-28">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+          <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-cognac mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-emeraldDeep text-sand">06</span>
+            <span>Sık Sorulan Sorular</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-emeraldDeep">
+            Sipariş Öncesi Merak Edilenler
+          </h2>
+        </div>
+
+        <div class="space-y-3.5 reveal">
+          <!-- SSS 1 -->
+          <div class="accordion-item open bg-white rounded-2xl border border-sandLine shadow-sm overflow-hidden">
+            <button type="button" class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left">
+              <span class="font-display font-bold text-base sm:text-lg text-anthracite">28'li gözlük tablaları üst üste istiflenebiliyor mu?</span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand border border-sandLine flex items-center justify-center shrink-0 transition-all duration-300">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 sm:px-6 pb-6 text-sm sm:text-base text-muted leading-relaxed">
+                Evet. Zümrüt Yeşili, Konyak Kahve, Espresso ve Antrasit 28'li tablalarımızın tamamı kaymadan üst üste istiflenebilir formda üretilir. Hem vitrin/banko sunumunda hem de toplu depo stoklamasında güvenle kullanabilirsiniz.
+              </div>
+            </div>
+          </div>
+
+          <!-- SSS 2 -->
+          <div class="accordion-item bg-white rounded-2xl border border-sandLine shadow-sm overflow-hidden">
+            <button type="button" class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left">
+              <span class="font-display font-bold text-base sm:text-lg text-anthracite">18 çekmeceli beyaz-antrasit dolap kaç gözlük alır?</span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand border border-sandLine flex items-center justify-center shrink-0 transition-all duration-300">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 sm:px-6 pb-6 text-sm sm:text-base text-muted leading-relaxed">
+                18 çekmeceli optik dolabımızın her çekmecesi 4 kolonlu geniş iç bölümlendirmeye sahiptir. Seçilen bölme yoğunluğuna göre tek bir dolap ünitesinde 360 ile 504 adet arasında optik ve güneş gözlüğünü düzenli şekilde saklayabilirsiniz.
+              </div>
+            </div>
+          </div>
+
+          <!-- SSS 3 -->
+          <div class="accordion-item bg-white rounded-2xl border border-sandLine shadow-sm overflow-hidden">
+            <button type="button" class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left">
+              <span class="font-display font-bold text-base sm:text-lg text-anthracite">Mağazamdaki mevcut çekmecelere göre özel ölçü yaptırabilir miyim?</span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand border border-sandLine flex items-center justify-center shrink-0 transition-all duration-300">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 sm:px-6 pb-6 text-sm sm:text-base text-muted leading-relaxed">
+                Kesinlikle. Standart 28'li tablalarımızın yanı sıra mevcut mobilyalarınızın iç en, derinlik ve yükseklik ölçülerine göre birebir özel kesim ve kaplama üretim yapıyoruz.
+              </div>
+            </div>
+          </div>
+
+          <!-- SSS 4 -->
+          <div class="accordion-item bg-white rounded-2xl border border-sandLine shadow-sm overflow-hidden">
+            <button type="button" class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left">
+              <span class="font-display font-bold text-base sm:text-lg text-anthracite">Toptan alımlarda fiyat avantajı ve kargo süreci nasıl işliyor?</span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand border border-sandLine flex items-center justify-center shrink-0 transition-all duration-300">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-inner px-5 sm:px-6 pb-6 text-sm sm:text-base text-muted leading-relaxed">
+                Yeni mağaza açılışları, şube yenilemeleri ve çoklu blok set siparişlerinde adet bazlı özel toptan fiyatlandırma sunuyoruz. Ürünleriniz köşe korumalı özel kolilerle Türkiye'nin 81 iline güvenle sevk edilir.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- İLETİŞİM & HIZLI TEKLİF FORMU -->
+    <section id="iletisim" class="pb-24 pt-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-[2.25rem] border border-sandLine shadow-luxury overflow-hidden reveal">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+
+            <!-- Sol Bilgi Paneli (Koyu Zümrüt) -->
+            <div class="lg:col-span-5 bg-emeraldDeep text-sand p-8 sm:p-11 flex flex-col justify-between bg-emerald-watermark">
+              <div class="space-y-5">
+                <span class="inline-block text-xs font-bold uppercase tracking-[0.2em] text-cognacLight">optibox.com.tr · Hızlı Teklif</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                  Mağazanız İçin En Doğru Seti Birlikte Planlayalım
+                </h2>
+                <p class="text-sm sm:text-base text-sand/75 leading-relaxed">
+                  İlgilendiğiniz model kodunu, renk serisini ve adet bilgisini bırakın; aynı gün içinde size özel fiyat teklifiyle dönüş yapalım.
+                </p>
+              </div>
+
+              <div class="space-y-4 mt-10">
+                <a href="tel:+902320000000" class="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.07] border border-white/10 hover:bg-white/[0.12] transition-colors">
+                  <div class="w-11 h-11 rounded-xl bg-cognac/25 text-cognacLight flex items-center justify-center shrink-0">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs text-sand/65">Telefon</div>
+                    <div class="font-semibold text-white">0 (232) 000 00 00</div>
+                  </div>
+                </a>
+
+                <a href="https://wa.me/905320000000?text=Merhaba%20OptiBox%2C%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.07] border border-white/10 hover:bg-white/[0.12] transition-colors">
+                  <div class="w-11 h-11 rounded-xl bg-emeraldLight/35 text-emerald-300 flex items-center justify-center shrink-0">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs text-sand/65">WhatsApp Sipariş Hattı</div>
+                    <div class="font-semibold text-white">0 (532) 000 00 00</div>
+                  </div>
+                </a>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.07] border border-white/10">
+                  <div class="w-11 h-11 rounded-xl bg-white/10 text-sand flex items-center justify-center shrink-0">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs text-sand/65">Üretim & Sevkiyat</div>
+                    <div class="font-semibold text-white">İzmir · Türkiye Geneli Kargo</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sağ Teklif Formu -->
+            <div class="lg:col-span-7 p-8 sm:p-11">
+              <form id="quote-form" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="f-name" class="block text-xs font-bold uppercase tracking-wider text-muted mb-2">Ad Soyad / Optik Mağaza Adı *</label>
+                    <input id="f-name" name="name" type="text" required placeholder="Örn: Ege Optik / Ahmet Bey" class="w-full px-4 py-3.5 rounded-2xl bg-sand border border-sandLine text-sm text-anthracite placeholder:text-muted/60 focus:outline-none focus:border-emeraldDeep transition-colors" />
+                  </div>
+                  <div>
+                    <label for="f-phone" class="block text-xs font-bold uppercase tracking-wider text-muted mb-2">Telefon / WhatsApp *</label>
+                    <input id="f-phone" name="phone" type="tel" required placeholder="0 (5XX) XXX XX XX" class="w-full px-4 py-3.5 rounded-2xl bg-sand border border-sandLine text-sm text-anthracite placeholder:text-muted/60 focus:outline-none focus:border-emeraldDeep transition-colors" />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="f-category" class="block text-xs font-bold uppercase tracking-wider text-muted mb-2">Ürün Grubu</label>
+                    <select id="f-category" name="category" class="w-full px-4 py-3.5 rounded-2xl bg-sand border border-sandLine text-sm text-anthracite focus:outline-none focus:border-emeraldDeep transition-colors">
+                      <option value="Çekmeceli Dolaplar">Çekmeceli Dolaplar (18 Çekmeceli)</option>
+                      <option value="28'li Tablalar">28'li İstiflenebilir Tablalar</option>
+                      <option value="Toptan Setler">Toptan Mağaza Stok Setleri</option>
+                      <option value="Özel Ölçü Proje">Özel Ölçü Mağaza Projesi</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="f-color" class="block text-xs font-bold uppercase tracking-wider text-muted mb-2">Tercih Edilen Renk Serisi</label>
+                    <select id="f-color" name="color" class="w-full px-4 py-3.5 rounded-2xl bg-sand border border-sandLine text-sm text-anthracite focus:outline-none focus:border-emeraldDeep transition-colors">
+                      <option value="Zümrüt Yeşili">Zümrüt Yeşili</option>
+                      <option value="Konyak Kahve">Konyak Kahve</option>
+                      <option value="Espresso Kahve">Koyu Kahve (Espresso)</option>
+                      <option value="Antrasit & Beyaz">Antrasit & Beyaz</option>
+                      <option value="Karışık / Henüz Karar Vermedim">Karışık / Danışmak İstiyorum</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="f-message" class="block text-xs font-bold uppercase tracking-wider text-muted mb-2">Model Kodu, Adet ve Ölçü Notlarınız *</label>
+                  <textarea id="f-message" name="message" rows="4" required placeholder="Örn: 1 adet 18 çekmeceli dolap ve 10 adet Zümrüt Yeşili 28'li tabla için fiyat teklifi alabilir miyim?" class="w-full px-4 py-3.5 rounded-2xl bg-sand border border-sandLine text-sm text-anthracite placeholder:text-muted/60 focus:outline-none focus:border-emeraldDeep transition-colors resize-none"></textarea>
+                </div>
+
+                <!-- Başarı Bildirimi -->
+                <div id="form-feedback" class="hidden p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <div>
+                    <div class="font-bold">Teklif talebiniz başarıyla alındı!</div>
+                    <div class="text-emerald-800/80 text-xs mt-0.5">OptiBox ekibimiz en kısa sürede telefon veya WhatsApp üzerinden dönüş yapacaktır.</div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                  <p class="text-xs text-muted">Bilgileriniz gizli tutulur, yalnızca teklif için kullanılır.</p>
+                  <button type="submit" class="inline-flex items-center justify-center gap-2.5 bg-cognac hover:bg-cognacLight text-white text-sm font-bold px-8 py-4 rounded-full shadow-glow transition-all duration-300 shrink-0">
+                    <span>Teklif Talebi Gönder</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER (DEV optibox.com.tr FİLİGRANLI) ==================== -->
+  <footer class="relative overflow-hidden bg-emeraldDeep text-sand/85 pt-16 pb-10 border-t border-white/10">
+    <!-- Dev Arka Plan Tipografisi -->
+    <div aria-hidden="true" class="pointer-events-none select-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
+      <span class="font-display font-extrabold text-[15vw] lg:text-[12rem] leading-none tracking-tighter text-white/[0.035] whitespace-nowrap">
+        optibox.com.tr
+      </span>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-cognac text-white flex items-center justify-center">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="3" y1="15" x2="21" y2="15"></line>
+                <line x1="12" y1="9" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-xl text-white leading-none">Opti<span class="text-cognacLight">Box</span></div>
+              <div class="text-[11px] tracking-[0.16em] text-sand/60 mt-0.5">optibox.com.tr</div>
+            </div>
+          </div>
+          <p class="text-sm text-sand/70 max-w-sm leading-relaxed">
+            Optik mağazalar için 28'li istiflenebilir gözlük tablaları, 18 çekmeceli antrasit & beyaz optik dolaplar ve özel ölçü teşhir sistemleri üreticisi.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <div class="text-xs font-bold uppercase tracking-widest text-cognacLight">Hızlı Erişim</div>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#koleksiyon" class="hover:text-white transition-colors">Ürün Koleksiyonu</a></li>
+            <li><a href="#renk-serileri" class="hover:text-white transition-colors">Renk Serileri</a></li>
+            <li><a href="#neden-biz" class="hover:text-white transition-colors">Neden OptiBox?</a></li>
+            <li><a href="#galeri" class="hover:text-white transition-colors">Ürün Galerisi</a></li>
+            <li><a href="#sss" class="hover:text-white transition-colors">Sık Sorulan Sorular</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 space-y-3">
+          <div class="text-xs font-bold uppercase tracking-widest text-cognacLight">Çalışma Saatleri & İletişim</div>
+          <p class="text-sm text-white/85">Pazartesi – Cumartesi: 09:00 – 19:00</p>
+          <p class="text-sm text-sand/70">İzmir, Türkiye · 0 (232) 000 00 00</p>
+          <p class="text-sm text-sand/70">info@optibox.com.tr</p>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sand/55">
+        <p>© 2026 OptiBox (optibox.com.tr). Tüm hakları saklıdır.</p>
+        <p>Optik Mağaza Gözlük Çekmeceleri & Teşhir Sistemleri</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== ÜRÜN DETAY MODALI (ÇOKLU AÇI DESTEKLİ) ==================== -->
+  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-anthracite/70 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="relative w-full max-w-4xl bg-white rounded-[2rem] border border-sandLine shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
+      <!-- Üst Bar -->
+      <div class="flex items-center justify-between px-6 py-4 bg-sand border-b border-sandLine">
+        <div class="flex items-center gap-2.5">
+          <span id="modal-code" class="text-xs font-bold px-3 py-1 rounded-full bg-emeraldDeep text-sand">OB-16</span>
+          <span id="modal-category" class="text-xs font-bold uppercase tracking-wider text-cognac">Kategori</span>
+        </div>
+        <button id="modal-close-btn" type="button" aria-label="Kapat" class="p-2 rounded-full bg-white border border-sandLine hover:bg-emeraldDeep hover:text-white text-anthracite transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- İçerik -->
+      <div class="overflow-y-auto p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-7">
+        <!-- Sol Görsel + Çoklu Açı Thumbnail -->
+        <div class="md:col-span-6 space-y-3">
+          <div id="modal-main-media" class="rounded-2xl bg-sand/70 border border-sandLine p-3 aspect-[4/3] flex items-center justify-center overflow-hidden">
+            <!-- Ana Fotoğraf -->
+          </div>
+          <div id="modal-thumbs" class="flex items-center gap-2.5 overflow-x-auto pb-1">
+            <!-- Çoklu Açı Küçük Görselleri -->
+          </div>
+        </div>
+
+        <!-- Sağ Detaylar -->
+        <div class="md:col-span-6 flex flex-col justify-between space-y-5">
+          <div>
+            <h3 id="modal-title" class="font-display text-2xl font-extrabold text-emeraldDeep leading-snug">Ürün Adı</h3>
+            <p id="modal-desc" class="text-sm text-muted leading-relaxed mt-2.5">Açıklama</p>
+
+            <div class="mt-5 space-y-3 pt-4 border-t border-sandLine text-sm">
+              <div class="flex justify-between gap-3">
+                <span class="text-muted">Kapasite</span>
+                <span id="modal-cap" class="font-semibold text-anthracite text-right">-</span>
+              </div>
+              <div class="flex justify-between gap-3">
+                <span class="text-muted">Ölçü & Yapı</span>
+                <span id="modal-dim" class="font-semibold text-anthracite text-right">-</span>
+              </div>
+              <div class="flex justify-between gap-3">
+                <span class="text-muted">Malzeme</span>
+                <span id="modal-mat" class="font-semibold text-anthracite text-right">-</span>
+              </div>
+              <div class="flex justify-between gap-3 items-center">
+                <span class="text-muted">Renk Serisi</span>
+                <div id="modal-colors" class="flex items-center gap-2 font-semibold text-anthracite text-right"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 space-y-2.5">
+            <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-emeraldDeep hover:bg-emeraldRich text-sand text-sm font-bold px-5 py-3.5 rounded-full transition-all shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-300"></i>
+              <span>WhatsApp ile Bu Ürün İçin Teklif Al</span>
+            </a>
+            <button id="modal-quote-btn" type="button" class="w-full flex items-center justify-center gap-2 bg-sand hover:bg-sandDark border border-sandLine text-anthracite text-sm font-semibold px-5 py-3.5 rounded-full transition-all">
+              <span>Teklif Formuna Aktar</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TAM EKRAN GALERİ LIGHTBOX ==================== -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-8 bg-anthracite/90 backdrop-blur-md" role="dialog" aria-modal="true">
+    <button id="lightbox-close" type="button" aria-label="Kapat" class="absolute top-5 right-5 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <button id="lightbox-prev" type="button" aria-label="Önceki" class="absolute left-3 sm:left-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+      <i data-lucide="chevron-left" class="w-6 h-6"></i>
+    </button>
+    <button id="lightbox-next" type="button" aria-label="Sonraki" class="absolute right-3 sm:right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+      <i data-lucide="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <div class="max-w-4xl w-full flex flex-col items-center gap-4">
+      <div id="lightbox-media" class="w-full max-h-[75vh] bg-white rounded-3xl p-3 sm:p-5 flex items-center justify-center overflow-hidden shadow-2xl">
+        <!-- Büyük Görsel -->
+      </div>
+      <div class="text-center text-white">
+        <div id="lightbox-caption" class="font-display font-bold text-base sm:text-lg"></div>
+        <div id="lightbox-counter" class="text-xs text-white/60 mt-1">1 / 10</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== YÜZEN HIZLI BUTONLAR ==================== -->
+  <!-- Sol Alt: Kendi Fotoğraflarını Anında Önizle (Yazdırmada Gizli) -->
+  <div class="fixed bottom-5 left-5 z-40 no-print">
+    <input id="local-photo-input" type="file" multiple accept="image/*" class="hidden" />
+    <button id="local-photo-btn" type="button" title="Bilgisayarındaki optibox (11).jpeg - optibox (20).jpeg dosyalarını seçerek sayfada canlı önizle" class="flex items-center gap-2 bg-white/95 backdrop-blur-md hover:bg-cognac hover:text-white text-anthracite border border-sandLine shadow-luxury px-4 py-3 rounded-full text-xs sm:text-sm font-bold transition-all duration-300">
+      <span>📸</span>
+      <span>Kendi Fotoğraflarını Önizle</span>
+    </button>
+  </div>
+
+  <!-- Sağ Alt: WhatsApp & Yukarı Çık -->
+  <div class="fixed bottom-5 right-5 z-40 flex items-center gap-2.5 no-print">
+    <button id="scroll-top-btn" type="button" aria-label="Yukarı Çık" class="hidden w-12 h-12 rounded-full bg-white border border-sandLine text-emeraldDeep shadow-luxury hover:bg-emeraldDeep hover:text-white items-center justify-center transition-all">
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+    <a href="https://wa.me/905320000000?text=Merhaba%20OptiBox%2C%20%C3%BCr%C3%BCnler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="flex items-center gap-2.5 bg-emeraldDeep hover:bg-emeraldRich text-sand pl-4 pr-4 sm:pr-5 py-3.5 rounded-full shadow-luxury border border-white/15 transition-all duration-300">
+      <i data-lucide="message-circle" class="w-5 h-5 text-emerald-300"></i>
+      <span class="hidden sm:inline text-sm font-bold">WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- TOAST BİLDİRİMİ (alert yerine) -->
+  <div id="toast" class="fixed top-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 -translate-y-3 transition-all duration-300 bg-anthracite text-sand text-xs sm:text-sm font-semibold px-5 py-3 rounded-full shadow-2xl flex items-center gap-2 border border-white/10">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-text">İşlem tamamlandı</span>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    /* =========================================================================
+       OPTİBOX (optibox.com.tr) ÜRÜN YÖNETİM LİSTESİ
+       =========================================================================
+       YENİ ÜRÜN NASIL EKLENİR?
+       1. Yeni fotoğrafınızı bu index.html dosyası ile aynı klasöre (veya Vercel
+          projenizde /public klasörüne) koyun. Örn: "optibox (21).jpeg"
+       2. Aşağıdaki URUNLER dizisinin sonuna virgül koyup yeni bir { ... } bloğu ekleyin.
+       3. kategori alanı şunlardan biri olmalıdır:
+          "Çekmeceli Dolaplar" | "28'li Tablalar" | "Toptan Setler"
+       ========================================================================= */
+
+    const WHATSAPP_NUMARA = "905320000000"; // Kendi numaranızı 90 ile başlayacak şekilde yazın
+
+    const URUNLER = [
+      {
+        id: 1,
+        kod: "OB-16",
+        ad: "Beyaz Gövde 18 Çekmeceli Antrasit Optik Dolap",
+        kategori: "Çekmeceli Dolaplar",
+        kapasite: "18 Çekmece · 360–504 Gözlük",
+        olcu: "Parlak Beyaz Gövde · 4 Kolonlu Bej İç Bölme",
+        malzeme: "Lake/MDFLam Gövde, Antrasit Kumaş Yüzey, Krom Kulp",
+        renkAdi: "Antrasit & Beyaz",
+        renkKodlari: ["#FFFFFF", "#3B4148", "#D9C3AE"],
+        aciklama: "Parlak beyaz gövdesi, antrasit kumaş kaplı 18 çekmecesi ve kavisli krom kulplarıyla optik mağazanızın amiral gemisi. Her çekmece 4 kolonlu sıcak bej iç bölmelere sahiptir.",
+        gorsel: "optibox (16).jpeg",
+        galeri: ["optibox (16).jpeg", "optibox (17).jpeg", "optibox (20).jpeg"]
+      },
+      {
+        id: 2,
+        kod: "OB-11",
+        ad: "Zümrüt Yeşili 28'li Gözlük Tablası",
+        kategori: "28'li Tablalar",
+        kapasite: "28 Gözlük (4 × 7 Bölme)",
+        olcu: "İstiflenebilir Standart 28'li Modül",
+        malzeme: "Zümrüt Yeşili Dış Kaplama / Sıcak Krem İç Kumaş",
+        renkAdi: "Zümrüt Yeşili",
+        renkKodlari: ["#165B43", "#DFCBB8"],
+        aciklama: "Göz alıcı zümrüt yeşili dış kaplaması ve çizilmez sıcak krem 4×7 (28 gözlü) iç bölmeleriyle lüks optik sunumları için özel olarak üretilmiştir.",
+        gorsel: "optibox (11).jpeg",
+        galeri: ["optibox (11).jpeg"]
+      },
+      {
+        id: 3,
+        kod: "OB-12",
+        ad: "Konyak Kahve 28'li İstiflenebilir Gözlük Tablası",
+        kategori: "28'li Tablalar",
+        kapasite: "28 Gözlük (4 × 7 Bölme)",
+        olcu: "Üst Üste İstiflenebilir 28'li Sistem",
+        malzeme: "Konyak / Terracotta Dış Kaplama / Bej İç Bölme",
+        renkAdi: "Konyak Kahve",
+        renkKodlari: ["#9A5236", "#DECAB7"],
+        aciklama: "Sıcak konyak kahve dış yüzeyi ve krem-bej 28 bölmeli iç düzeniyle hem banko sunumlarında hem de çoklu istiflemede mağazanıza karakter katar.",
+        gorsel: "optibox (12).jpeg",
+        galeri: ["optibox (12).jpeg", "optibox (13).jpeg", "optibox (15).jpeg"]
+      },
+      {
+        id: 4,
+        kod: "OB-14",
+        ad: "Koyu Kahve (Espresso) 28'li Gözlük Tablası",
+        kategori: "28'li Tablalar",
+        kapasite: "28 Gözlük (4 × 7 Bölme)",
+        olcu: "İstiflenebilir 28'li Modül",
+        malzeme: "Espresso Koyu Kahve Dış / Krem İç Kumaş",
+        renkAdi: "Espresso Kahve",
+        renkKodlari: ["#462B1E", "#DFCBB8"],
+        aciklama: "Ağırbaşlı koyu espresso kahve dış kaplaması ve kontrast yaratan açık krem bölmeleriyle özellikle klasik ve ahşap ağırlıklı mağaza dekorasyonlarına mükemmel uyum sağlar.",
+        gorsel: "optibox (14).jpeg",
+        galeri: ["optibox (14).jpeg"]
+      },
+      {
+        id: 5,
+        kod: "OB-18",
+        ad: "Antrasit 28'li Modüler Gözlük Çekmece Tablası",
+        kategori: "28'li Tablalar",
+        kapasite: "28 Gözlük (4 × 7 Bölme)",
+        olcu: "Çekmece İçi & Masaüstü Uyumlu",
+        malzeme: "Antrasit Gri Kumaş Çerçeve / Sıcak Bej İç Kaplama",
+        renkAdi: "Antrasit Gri",
+        renkKodlari: ["#495057", "#DCC6B2"],
+        aciklama: "Modern antrasit gri çerçevesi ve 4×7 düzenli 28 bölmeli yapısıyla hem 18 çekmeceli dolaplarımızla tam uyumludur hem de bağımsız sunum tablası olarak kullanılır.",
+        gorsel: "optibox (18).jpeg",
+        galeri: ["optibox (18).jpeg", "optibox (19).jpeg"]
+      },
+      {
+        id: 6,
+        kod: "OB-20",
+        ad: "Açık Çekmeceli Kademeli Optik Dolap Sistemi",
+        kategori: "Çekmeceli Dolaplar",
+        kapasite: "18 Çekmeceli Kademeli Erişim",
+        olcu: "4 Kolonlu Geniş Çekmece İçi Düzen",
+        malzeme: "Beyaz Gövde, Antrasit Çekmece, Parlak Krom Kulp",
+        renkAdi: "Antrasit & Beyaz",
+        renkKodlari: ["#FFFFFF", "#474E56", "#D6BEAA"],
+        aciklama: "Akıcı çekmece rayları ve parlak krom kulplarıyla birden fazla çekmeceyi kademeli açarak müşterinize onlarca çerçeveyi aynı anda konforla sunmanızı sağlar.",
+        gorsel: "optibox (20).jpeg",
+        galeri: ["optibox (20).jpeg", "optibox (16).jpeg", "optibox (17).jpeg"]
+      },
+      {
+        id: 7,
+        kod: "OB-13",
+        ad: "Konyak Seri Çoklu Mağaza Stok Seti",
+        kategori: "Toptan Setler",
+        kapasite: "Çoklu Sıra · Yüksek Stok Kapasitesi",
+        olcu: "Proje & Adet Bazlı Toplu Set",
+        malzeme: "Konyak Kahve Dış / Çizilmez Bej İç Kaplama",
+        renkAdi: "Konyak Kahve",
+        renkKodlari: ["#9A5236", "#DFCBB8"],
+        aciklama: "Yüksek adetli çerçeve stoğu bulunan optik mağazaları ve toptancılar için üst üste istiflenen çok sıralı konyak seri stok ve arşiv çözümü.",
+        gorsel: "optibox (13).jpeg",
+        galeri: ["optibox (13).jpeg", "optibox (12).jpeg", "optibox (15).jpeg"]
+      },
+      {
+        id: 8,
+        kod: "OB-15",
+        ad: "Konyak Kahve 3'lü Blok Teşhir & Depolama Seti",
+        kategori: "Toptan Setler",
+        kapasite: "3'lü Blok İstif · Yüzlerce Çerçeve",
+        olcu: "3 Sütunlu Modüler Blok Dizilim",
+        malzeme: "Konyak Kahve Dış / 28'li Krem İç Bölme",
+        renkAdi: "Konyak Kahve",
+        renkKodlari: ["#9A5236", "#E2D0BF"],
+        aciklama: "Yeni mağaza kurulumları ve depo düzenlemeleri için 3'lü blok halinde hazırlanan, maksimum düzen ve hızlı erişim sağlayan avantajlı toptan set.",
+        gorsel: "optibox (15).jpeg",
+        galeri: ["optibox (15).jpeg", "optibox (13).jpeg", "optibox (12).jpeg"]
+      }
+    ];
+
+    // 4 İnteraktif Renk Serisi
+    const RENK_SERILERI = [
+      {
+        id: "zumrut",
+        ad: "Zümrüt Yeşili",
+        altBaslik: "Zümrüt Yeşili & Sıcak Krem",
+        disRenk: "#165B43",
+        icRenk: "#DFCBB8",
+        gorsel: "optibox (11).jpeg",
+        urunId: 2,
+        aciklama: "Butik ve prestijli optik mağazaların favorisi. Derin zümrüt yeşili dış çerçeve, sıcak krem iç kaplama ile buluşarak özellikle altın ve kemik çerçeveleri ön plana çıkarır.",
+        maddeler: [
+          "4×7 dizilim ile tek tablada 28 gözlük kapasitesi",
+          "Üst üste kaymadan istiflenebilir sağlam kasa",
+          "Çizilmez, anti-statik sıcak krem iç kumaş"
+        ]
+      },
+      {
+        id: "konyak",
+        ad: "Konyak Kahve",
+        altBaslik: "Konyak Kahve & Doğal Bej",
+        disRenk: "#9A5236",
+        icRenk: "#DECAB7",
+        gorsel: "optibox (12).jpeg",
+        urunId: 3,
+        aciklama: "Sıcak konyak ve terracotta tonlarıyla mağazanıza samimi ama seçkin bir atmosfer kazandırır. Tekli sunumdan 3'lü blok stok setlerine kadar tüm formlarda üretilir.",
+        maddeler: [
+          "Çoklu istif ve toptan blok set seçeneği",
+          "Güneş gözlüğü ve optik çerçevelerle yüksek kontrast",
+          "Kolay silinebilir, darbelere dayanıklı dış yüzey"
+        ]
+      },
+      {
+        id: "espresso",
+        ad: "Espresso Kahve",
+        altBaslik: "Koyu Kahve (Espresso) & Krem",
+        disRenk: "#462B1E",
+        icRenk: "#DFCBB8",
+        gorsel: "optibox (14).jpeg",
+        urunId: 4,
+        aciklama: "Derin koyu çikolata / espresso tonu ile zamansız bir zarafet sunar. Ahşap bankolar ve sıcak aydınlatmalı mağaza vitrinleriyle kusursuz bütünlük sağlar.",
+        maddeler: [
+          "Leke göstermeyen koyu espresso dış kaplama",
+          "28 bölmeli pürüzsüz krem iç seperatörler",
+          "Toptan ve proje bazlı hızlı üretim avantajı"
+        ]
+      },
+      {
+        id: "antrasit",
+        ad: "Antrasit & Beyaz",
+        altBaslik: "Antrasit Gri, Beyaz Gövde & Krom",
+        disRenk: "#3B4148",
+        icRenk: "#D9C3AE",
+        gorsel: "optibox (16).jpeg",
+        urunId: 1,
+        aciklama: "Modern mimarili optik mağazalar için tasarlandı. Parlak beyaz gövdeli 18 çekmeceli dolaplarımız ve antrasit 28'li tablalarımız birbiriyle birebir uyumludur.",
+        maddeler: [
+          "18 çekmeceli dolap + 28'li antrasit tabla tam uyumu",
+          "Ergonomik parlak krom kavisli çekmece kulpları",
+          "4 kolonlu düzenli bej iç bölmeler"
+        ]
+      }
+    ];
+
+    // 10 Ürün Açısı Galerisi
+    const GALERI_GORSELLERI = [
+      { dosya: "optibox (16).jpeg", baslik: "Beyaz Gövde 18 Çekmeceli Antrasit Dolap (Ön Açı)" },
+      { dosya: "optibox (17).jpeg", baslik: "18 Çekmeceli Optik Dolap (Yan Perspektif)" },
+      { dosya: "optibox (20).jpeg", baslik: "Açık Çekmeceli Kademeli Görünüm & Krom Kulplar" },
+      { dosya: "optibox (11).jpeg", baslik: "Zümrüt Yeşili 28'li Gözlük Tablası" },
+      { dosya: "optibox (12).jpeg", baslik: "Konyak Kahve 28'li İstiflenebilir Tabla" },
+      { dosya: "optibox (13).jpeg", baslik: "Konyak Seri Çoklu Mağaza Stok Dizilimi" },
+      { dosya: "optibox (14).jpeg", baslik: "Espresso Koyu Kahve 28'li Gözlük Tablaları" },
+      { dosya: "optibox (15).jpeg", baslik: "Konyak Kahve 3'lü Blok Depolama Seti" },
+      { dosya: "optibox (18).jpeg", baslik: "Antrasit 28'li Modüler Tabla (Üst Görünüm)" },
+      { dosya: "optibox (19).jpeg", baslik: "Antrasit 28'li Modüler Tabla (Detay Açı)" }
+    ];
+
+    /* =========================================================================
+       GERÇEKÇİ FALLBACK SVG ÜRETİCİ + YEREL FOTOĞRAF ÖNİZLEME MOTORU
+       ========================================================================= */
+    const LOCAL_PHOTO_MAP = {}; // Kullanıcı "Kendi Fotoğraflarını Önizle" dediğinde dolar
+
+    // Verilen dosya adı için gerçekçi özel SVG illüstrasyon üretir (kırık görsel ikonu asla görünmez)
+    function createProductFallbackSVG(filename) {
+      const f = (filename || '').toLowerCase();
+
+      // 18 Çekmeceli Beyaz/Antrasit Dolap (Ön veya Yan)
+      if (f.includes('(16)') || f.includes('(17)')) {
+        let drawers = '';
+        for (let i = 0; i < 14; i++) {
+          const y = 34 + i * 16.5;
+          drawers += `
+            <rect x="78" y="${y}" width="164" height="14.5" rx="1.5" fill="#464C54" stroke="#2C3137" stroke-width="0.8"/>
+            <path d="M144 ${y + 6.5} Q160 ${y + 11.5} 176 ${y + 6.5}" stroke="#E5E9EF" stroke-width="2" fill="none" stroke-linecap="round"/>
+          `;
+        }
+        return `
+          <svg viewBox="0 0 320 280" class="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="280" rx="16" fill="#FAF6F0"/>
+            <polygon points="72,26 248,26 236,12 84,12" fill="#FFFFFF" stroke="#DCD5CA"/>
+            <rect x="72" y="26" width="176" height="242" rx="4" fill="#FFFFFF" stroke="#D5CEC2" stroke-width="2"/>
+            ${drawers}
+            <text x="160" y="276" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="700" fill="#0D3B2E" opacity="0.5">OPTIBOX · 18 ÇEKMECELİ DOLAP</text>
+          </svg>`;
+      }
+
+      // Açık Çekmeceli Kademeli Görünüm (optibox 20)
+      if (f.includes('(20)')) {
+        let tiers = '';
+        for (let i = 0; i < 5; i++) {
+          const y = 66 + i * 36;
+          const inset = i * 4;
+          tiers += `
+            <rect x="${36 + inset}" y="${y}" width="${248 - inset * 2}" height="30" rx="2" fill="#D9C3AE" stroke="#464C54" stroke-width="2"/>
+            <line x1="${98 + inset / 2}" y1="${y}" x2="${98 + inset / 2}" y2="${y + 30}" stroke="#464C54" stroke-width="2"/>
+            <line x1="160" y1="${y}" x2="160" y2="${y + 30}" stroke="#464C54" stroke-width="2"/>
+            <line x1="${222 - inset / 2}" y1="${y}" x2="${222 - inset / 2}" y2="${y + 30}" stroke="#464C54" stroke-width="2"/>
+            <rect x="${34 + inset}" y="${y + 24}" width="${252 - inset * 2}" height="9" rx="2" fill="#464C54"/>
+            <path d="M138 ${y + 28} Q160 ${y + 37} 182 ${y + 28}" stroke="#EFF3F7" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          `;
+        }
+        return `
+          <svg viewBox="0 0 320 260" class="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="260" rx="16" fill="#FAF6F0"/>
+            <rect x="28" y="12" width="264" height="54" rx="4" fill="#FFFFFF" stroke="#D5CEC2" stroke-width="2"/>
+            ${tiers}
+          </svg>`;
+      }
+
+      // 28'li Tablalar (Zümrüt, Konyak, Espresso, Antrasit)
+      let outer = '#9A5236', dark = '#7B3E26', label = 'KONYAK 28\'Lİ SERİ';
+      let stacked = true;
+      if (f.includes('(11)')) { outer = '#1B5E46'; dark = '#124231'; label = 'ZÜMRÜT YEŞİLİ 28\'Lİ'; stacked = false; }
+      else if (f.includes('(14)')) { outer = '#4A2E21'; dark = '#331E15'; label = 'ESPRESSO 28\'Lİ SERİ'; stacked = true; }
+      else if (f.includes('(18)') || f.includes('(19)')) { outer = '#4C535B'; dark = '#34393F'; label = 'ANTRASİT 28\'Lİ SERİ'; stacked = false; }
+
+      let grid = '';
+      // 4 kolon × 7 satır = 28 bölme
+      const gx = 36, gy = stacked ? 26 : 32, gw = 248, gh = stacked ? 132 : 176;
+      const cw = gw / 4, ch = gh / 7;
+      for (let c = 1; c < 4; c++) {
+        grid += `<line x1="${gx + c * cw}" y1="${gy}" x2="${gx + c * cw}" y2="${gy + gh}" stroke="${outer}" stroke-width="3"/>`;
+      }
+      for (let r = 1; r < 7; r++) {
+        grid += `<line x1="${gx}" y1="${gy + r * ch}" x2="${gx + gw}" y2="${gy + r * ch}" stroke="#C9B39E" stroke-width="1.6"/>`;
+      }
+
+      let stackLayers = '';
+      if (stacked) {
+        for (let s = 0; s < 5; s++) {
+          const sy = 166 + s * 13;
+          stackLayers += `<rect x="${30 + s * 2}" y="${sy}" width="${260 - s * 4}" height="12" rx="1.5" fill="${outer}" stroke="${dark}" stroke-width="1"/>`;
+        }
+      }
+
+      return `
+        <svg viewBox="0 0 320 250" class="w-full h-full object-contain" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="250" rx="16" fill="#FAF6F0"/>
+          <rect x="28" y="${gy - 8}" width="264" height="${gh + 16}" rx="6" fill="${outer}" stroke="${dark}" stroke-width="2"/>
+          <rect x="${gx}" y="${gy}" width="${gw}" height="${gh}" rx="2" fill="#E3D0BE"/>
+          ${grid}
+          ${stackLayers}
+          <text x="160" y="242" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="700" fill="${outer}" opacity="0.75">OPTIBOX · ${label}</text>
+        </svg>`;
+    }
+
+    // Dosya adını mevcut kaynakla (yerel yüklenmişse ObjectURL, değilse dosya adı) eşler
+    function resolveImgSrc(filename) {
+      const key = (filename || '').toLowerCase();
+      return LOCAL_PHOTO_MAP[key] || filename;
+    }
+
+    // Görsel yüklenemezse kırık ikonu gizleyip gerçekçi SVG çizimini gösterir
+    window.handleOptiBoxImgError = function (imgEl, filename) {
+      if (!imgEl || imgEl.dataset.fallbackApplied === '1') return;
+      imgEl.dataset.fallbackApplied = '1';
+      imgEl.classList.add('hidden');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'optibox-svg-fallback w-full h-full flex items-center justify-center';
+      wrapper.innerHTML = createProductFallbackSVG(filename);
+      imgEl.parentNode.appendChild(wrapper);
+    };
+
+    // Tek bir medya kapsayıcısına <img> ekler (fallback destekli)
+    function buildImgTag(filename, alt, extraClasses = 'w-full h-full object-cover') {
+      const src = resolveImgSrc(filename);
+      const safeFile = filename.replace(/'/g, "\\'");
+      return `
+        <img
+          src="${src}"
+          data-filename="${filename}"
+          alt="${alt}"
+          loading="lazy"
+          class="${extraClasses}"
+          onerror="window.handleOptiBoxImgError(this, '${safeFile}')"
+        />`;
+    }
+
+    /* =========================================================================
+       UYGULAMA BAŞLATMA VE ETKİLEŞİMLER
+       ========================================================================= */
+    (function () {
+      'use strict';
+
+      // Toast Bildirimi
+      let toastTimer = null;
+      function showToast(msg) {
+        const toast = document.getElementById('toast');
+        document.getElementById('toast-text').textContent = msg;
+        toast.classList.remove('opacity-0', '-translate-y-3');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.add('opacity-0', '-translate-y-3');
+        }, 3400);
+      }
+
+      // 1. Canlı İstanbul Çalışma Saati (Pzt–Cmt 09:00–19:00)
+      function updateIstanbulStatus() {
+        const statusText = document.getElementById('status-text');
+        const statusPing = document.getElementById('status-ping');
+        const statusCore = document.getElementById('status-core');
+        if (!statusText) return;
+
+        try {
+          const now = new Date();
+          const istStr = now.toLocaleString('en-US', { timeZone: 'Europe/Istanbul' });
+          const ist = new Date(istStr);
+          const day = ist.getDay(); // 0 Pazar, 1-6 Pzt-Cmt
+          const mins = ist.getHours() * 60 + ist.getMinutes();
+          const isOpen = day >= 1 && day <= 6 && mins >= 540 && mins < 1140; // 09:00 - 19:00
+
+          if (isOpen) {
+            statusText.textContent = "Şu an açık · 09:00 – 19:00 (İstanbul)";
+            statusPing.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75";
+            statusCore.className = "relative inline-flex rounded-full h-2 w-2 bg-emerald-400";
+          } else {
+            statusText.textContent = day === 0
+              ? "Şu an kapalı · Pazartesi 09:00'da açılır"
+              : "Şu an kapalı · Yarın 09:00'da açılır";
+            statusPing.className = "hidden";
+            statusCore.className = "relative inline-flex rounded-full h-2 w-2 bg-amber-400";
+          }
+        } catch (err) {
+          statusText.textContent = "Pzt – Cmt · 09:00 – 19:00";
+        }
+      }
+
+      // 2. Ürün Koleksiyonu Render & Filtreleme & Arama
+      let seciliKategori = 'Tümü';
+      let aramaMetni = '';
+      const productGrid = document.getElementById('product-grid');
+      const productCount = document.getElementById('product-count');
+
+      function renderProducts() {
+        const q = aramaMetni.trim().toLowerCase();
+        const filtrelenmis = URUNLER.filter(u => {
+          const katUygun = seciliKategori === 'Tümü' || u.kategori === seciliKategori;
+          const aramaUygun = !q ||
+            u.ad.toLowerCase().includes(q) ||
+            u.kod.toLowerCase().includes(q) ||
+            u.renkAdi.toLowerCase().includes(q) ||
+            u.kategori.toLowerCase().includes(q);
+          return katUygun && aramaUygun;
+        });
+
+        productCount.textContent = `${filtrelenmis.length} Ürün`;
+
+        if (filtrelenmis.length === 0) {
+          productGrid.innerHTML = `
+            <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-sandLine">
+              <p class="font-display font-bold text-lg text-emeraldDeep">Aradığınız kriterde ürün bulunamadı.</p>
+              <p class="text-sm text-muted mt-1">Farklı bir kategori veya arama kelimesi deneyebilirsiniz.</p>
+            </div>`;
+          return;
+        }
+
+        productGrid.innerHTML = filtrelenmis.map(u => {
+          const renkNoktalari = u.renkKodlari.map(c =>
+            `<span class="w-3.5 h-3.5 rounded-full border border-black/15 shadow-xs" style="background:${c}"></span>`
+          ).join('');
+
+          return `
+            <article data-id="${u.id}" class="product-card group cursor-pointer bg-white rounded-3xl border border-sandLine p-4 sm:p-5 flex flex-col justify-between shadow-card hover:shadow-luxury hover:border-emeraldDeep/40 hover:-translate-y-1.5 transition-all duration-300">
+              <div>
+                <!-- Üst Etiketler -->
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="font-display text-[11px] font-bold px-2.5 py-1 rounded-full bg-emeraldDeep text-sand">${u.kod}</span>
+                  <span class="text-[11px] font-semibold text-cognac">${u.kategori}</span>
+                </div>
+
+                <!-- Ürün Görseli -->
+                <div class="relative rounded-2xl bg-sand/75 border border-sandLine/60 aspect-[4/3] mb-4 overflow-hidden flex items-center justify-center">
+                  ${buildImgTag(u.gorsel, u.ad, 'w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105')}
+                  ${u.galeri.length > 1 ? `<span class="absolute bottom-2 right-2 bg-anthracite/75 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm">${u.galeri.length} Açı</span>` : ''}
+                </div>
+
+                <!-- Başlık & Açıklama -->
+                <h3 class="font-display text-base font-extrabold text-anthracite group-hover:text-emeraldDeep transition-colors leading-snug">
+                  ${u.ad}
+                </h3>
+                <p class="text-xs text-muted leading-relaxed mt-2 line-clamp-2">
+                  ${u.aciklama}
+                </p>
+              </div>
+
+              <!-- Alt Özellikler & Buton -->
+              <div class="mt-5 pt-4 border-t border-sandLine space-y-3">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-sandDark text-anthracite">${u.kapasite}</span>
+                  <div class="flex items-center gap-1" title="${u.renkAdi}">${renkNoktalari}</div>
+                </div>
+                <div class="flex items-center justify-between text-xs font-bold text-emeraldDeep group-hover:text-cognac transition-colors">
+                  <span>Detaylı İncele</span>
+                  <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const urun = URUNLER.find(item => String(item.id) === card.dataset.id);
+            if (urun) openProductModal(urun);
+          });
+        });
+      }
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          seciliKategori = btn.dataset.filter;
+          document.querySelectorAll('.filter-btn').forEach(b => {
+            b.className = 'filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-anthracite border border-sandLine hover:border-emeraldDeep transition-all';
+          });
+          btn.className = 'filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-emeraldDeep text-sand shadow-md transition-all';
+          renderProducts();
+        });
+      });
+
+      document.getElementById('product-search').addEventListener('input', (e) => {
+        aramaMetni = e.target.value;
+        renderProducts();
+      });
+
+      // 3. Ürün Detay Modalı (Çoklu Açı Destekli)
+      const modal = document.getElementById('product-modal');
+      let aktifUrun = null;
+
+      function setModalMainImage(filename, alt) {
+        document.getElementById('modal-main-media').innerHTML = buildImgTag(filename, alt, 'w-full h-full object-contain');
+      }
+
+      function openProductModal(urun) {
+        aktifUrun = urun;
+        document.getElementById('modal-code').textContent = urun.kod;
+        document.getElementById('modal-category').textContent = urun.kategori;
+        document.getElementById('modal-title').textContent = urun.ad;
+        document.getElementById('modal-desc').textContent = urun.aciklama;
+        document.getElementById('modal-cap').textContent = urun.kapasite;
+        document.getElementById('modal-dim').textContent = urun.olcu;
+        document.getElementById('modal-mat').textContent = urun.malzeme;
+
+        document.getElementById('modal-colors').innerHTML = `
+          <span>${urun.renkAdi}</span>
+          <span class="flex items-center gap-1">${urun.renkKodlari.map(c => `<span class="w-3.5 h-3.5 rounded-full border border-black/15" style="background:${c}"></span>`).join('')}</span>
+        `;
+
+        setModalMainImage(urun.gorsel, urun.ad);
+
+        // Çoklu açı thumbnail'leri
+        const thumbsContainer = document.getElementById('modal-thumbs');
+        if (urun.galeri && urun.galeri.length > 1) {
+          thumbsContainer.innerHTML = urun.galeri.map((dosya, idx) => `
+            <button type="button" data-file="${dosya}" class="modal-thumb w-20 h-16 rounded-xl bg-sand border-2 ${idx === 0 ? 'border-emeraldDeep' : 'border-sandLine'} overflow-hidden p-1 shrink-0 hover:border-cognac transition-colors">
+              ${buildImgTag(dosya, urun.ad, 'w-full h-full object-contain')}
+            </button>
+          `).join('');
+
+          thumbsContainer.querySelectorAll('.modal-thumb').forEach(btn => {
+            btn.addEventListener('click', () => {
+              thumbsContainer.querySelectorAll('.modal-thumb').forEach(b => b.classList.replace('border-emeraldDeep', 'border-sandLine'));
+              btn.classList.replace('border-sandLine', 'border-emeraldDeep');
+              setModalMainImage(btn.dataset.file, urun.ad);
+            });
+          });
+        } else {
+          thumbsContainer.innerHTML = '';
+        }
+
+        const waMsg = encodeURIComponent(`Merhaba OptiBox (optibox.com.tr), "${urun.ad}" (Kod: ${urun.kod}) ürünü hakkında fiyat ve teslimat bilgisi almak istiyorum.`);
+        document.getElementById('modal-wa-btn').href = `https://wa.me/${WHATSAPP_NUMARA}?text=${waMsg}`;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeProductModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('modal-close-btn').addEventListener('click', closeProductModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeProductModal(); });
+
+      document.getElementById('modal-quote-btn').addEventListener('click', () => {
+        if (!aktifUrun) return;
+        document.getElementById('f-category').value = aktifUrun.kategori;
+        document.getElementById('f-message').value = `İlgilendiğim Ürün: ${aktifUrun.ad} (Kod: ${aktifUrun.kod})\nRenk Serisi: ${aktifUrun.renkAdi}\nİstediğim Adet / Not: `;
+        closeProductModal();
+        document.getElementById('iletisim').scrollIntoView({ behavior: 'smooth' });
+        showToast('Ürün bilgisi teklif formuna aktarıldı.');
+      });
+
+      // 4. İnteraktif Renk & Doku Serileri
+      let aktifRenkIndex = 0;
+
+      function renderColorShowcase(idx) {
+        aktifRenkIndex = idx;
+        const seri = RENK_SERILERI[idx];
+        const tabsEl = document.getElementById('color-tabs');
+
+        tabsEl.innerHTML = RENK_SERILERI.map((s, i) => `
+          <button type="button" data-idx="${i}" class="color-tab flex items-center gap-3 p-3.5 sm:p-4 rounded-2xl border text-left transition-all duration-200 ${i === idx ? 'bg-emeraldDeep text-sand border-emeraldDeep shadow-luxury' : 'bg-white text-anthracite border-sandLine hover:border-emeraldDeep/50'}">
+            <span class="w-8 h-8 rounded-xl shrink-0 border border-white/30 shadow-sm" style="background:${s.disRenk}"></span>
+            <div class="min-w-0">
+              <div class="font-display font-bold text-sm truncate">${s.ad}</div>
+              <div class="text-[11px] ${i === idx ? 'text-sand/75' : 'text-muted'} truncate">İncele →</div>
+            </div>
+          </button>
+        `).join('');
+
+        tabsEl.querySelectorAll('.color-tab').forEach(btn => {
+          btn.addEventListener('click', () => renderColorShowcase(Number(btn.dataset.idx)));
+        });
+
+        document.getElementById('color-showcase-badge').textContent = `${seri.ad} Serisi`;
+        document.getElementById('color-showcase-media').innerHTML = buildImgTag(seri.gorsel, seri.altBaslik, 'w-full h-72 sm:h-80 object-contain');
+        document.getElementById('color-swatch-outer').style.backgroundColor = seri.disRenk;
+        document.getElementById('color-swatch-inner').style.backgroundColor = seri.icRenk;
+        document.getElementById('color-showcase-title').textContent = seri.altBaslik;
+        document.getElementById('color-showcase-desc').textContent = seri.aciklama;
+
+        document.getElementById('color-showcase-points').innerHTML = seri.maddeler.map(m => `
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-emeraldDeep/10 text-emeraldDeep flex items-center justify-center shrink-0 mt-0.5">✓</span>
+            <span>${m}</span>
+          </li>
+        `).join('');
+
+        const waMsg = encodeURIComponent(`Merhaba OptiBox, ${seri.ad} serisi ürünleriniz için fiyat teklifi alabilir miyim?`);
+        document.getElementById('color-showcase-wa').href = `https://wa.me/${WHATSAPP_NUMARA}?text=${waMsg}`;
+
+        document.getElementById('color-showcase-open-modal').onclick = () => {
+          const u = URUNLER.find(item => item.id === seri.urunId);
+          if (u) openProductModal(u);
+        };
+      }
+
+      // 5. Galeri & Tam Ekran Lightbox
+      let lightboxIndex = 0;
+      const lightboxModal = document.getElementById('lightbox-modal');
+
+      function renderGallery() {
+        const grid = document.getElementById('gallery-grid');
+        grid.innerHTML = GALERI_GORSELLERI.map((g, i) => `
+          <button type="button" data-idx="${i}" class="gallery-item group relative bg-white rounded-2xl border border-sandLine p-2 overflow-hidden shadow-sm hover:shadow-luxury hover:border-emeraldDeep transition-all text-left">
+            <div class="rounded-xl bg-sand/70 aspect-square overflow-hidden flex items-center justify-center">
+              ${buildImgTag(g.dosya, g.baslik, 'w-full h-full object-contain p-1.5 transition-transform duration-500 group-hover:scale-105')}
+            </div>
+            <div class="pt-2.5 px-1 pb-1">
+              <div class="text-[11px] font-bold text-anthracite line-clamp-1 group-hover:text-emeraldDeep">${g.baslik}</div>
+            </div>
+          </button>
+        `).join('');
+
+        grid.querySelectorAll('.gallery-item').forEach(btn => {
+          btn.addEventListener('click', () => openLightbox(Number(btn.dataset.idx)));
+        });
+      }
+
+      function updateLightboxView() {
+        const g = GALERI_GORSELLERI[lightboxIndex];
+        document.getElementById('lightbox-media').innerHTML = buildImgTag(g.dosya, g.baslik, 'max-h-[68vh] w-auto object-contain');
+        document.getElementById('lightbox-caption').textContent = g.baslik;
+        document.getElementById('lightbox-counter').textContent = `${lightboxIndex + 1} / ${GALERI_GORSELLERI.length}`;
+      }
+
+      function openLightbox(idx) {
+        lightboxIndex = idx;
+        updateLightboxView();
+        lightboxModal.classList.remove('hidden');
+        lightboxModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.add('hidden');
+        lightboxModal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+      document.getElementById('lightbox-prev').addEventListener('click', () => {
+        lightboxIndex = (lightboxIndex - 1 + GALERI_GORSELLERI.length) % GALERI_GORSELLERI.length;
+        updateLightboxView();
+      });
+      document.getElementById('lightbox-next').addEventListener('click', () => {
+        lightboxIndex = (lightboxIndex + 1) % GALERI_GORSELLERI.length;
+        updateLightboxView();
+      });
+      lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (!modal.classList.contains('hidden')) closeProductModal();
+          if (!lightboxModal.classList.contains('hidden')) closeLightbox();
+        }
+        if (!lightboxModal.classList.contains('hidden')) {
+          if (e.key === 'ArrowLeft') document.getElementById('lightbox-prev').click();
+          if (e.key === 'ArrowRight') document.getElementById('lightbox-next').click();
+        }
+      });
+
+      // 6. Kendi Fotoğraflarını Canlı Önizleme (Dosya Adıyla Eşleştirme)
+      const localInput = document.getElementById('local-photo-input');
+      document.getElementById('local-photo-btn').addEventListener('click', () => localInput.click());
+
+      localInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files || []);
+        if (!files.length) return;
+
+        let eslesenSayi = 0;
+        files.forEach(file => {
+          const key = file.name.toLowerCase();
+          LOCAL_PHOTO_MAP[key] = URL.createObjectURL(file);
+          eslesenSayi++;
+        });
+
+        // Sayfadaki tüm data-filename taşıyan <img> elementlerini anında güncelle
+        document.querySelectorAll('img[data-filename]').forEach(img => {
+          const key = img.dataset.filename.toLowerCase();
+          if (LOCAL_PHOTO_MAP[key]) {
+            // Eğer daha önce fallback SVG eklendiyse kaldır
+            const fallback = img.parentNode.querySelector('.optibox-svg-fallback');
+            if (fallback) fallback.remove();
+            img.dataset.fallbackApplied = '0';
+            img.classList.remove('hidden');
+            img.src = LOCAL_PHOTO_MAP[key];
+          }
+        });
+
+        // Dinamik alanları da tazele
+        renderProducts();
+        renderColorShowcase(aktifRenkIndex);
+        renderGallery();
+
+        showToast(`${eslesenSayi} fotoğraf sayfaya canlı olarak yüklendi!`);
+      });
+
+      // 7. SSS Akordiyon, Mobil Menü, Form & Yukarı Çık
+      document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.accordion-item');
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+
+      document.getElementById('quote-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('form-feedback').classList.remove('hidden');
+        showToast('Teklif talebiniz OptiBox ekibine iletildi!');
+        e.target.reset();
+      });
+
+      const scrollTopBtn = document.getElementById('scroll-top-btn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          scrollTopBtn.classList.remove('hidden');
+          scrollTopBtn.classList.add('flex');
+        } else {
+          scrollTopBtn.classList.add('hidden');
+          scrollTopBtn.classList.remove('flex');
+        }
+      });
+      scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // 8. Scroll Reveal & Animasyonlu Sayaçlar
+      function initAnimations() {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = Number(el.dataset.target);
+              let current = 0;
+              const step = Math.max(1, Math.ceil(target / 35));
+              const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                  el.textContent = target;
+                  clearInterval(timer);
+                } else {
+                  el.textContent = current;
+                }
+              }, 30);
+              counterObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+      }
+
+      // Başlat
+      window.addEventListener('DOMContentLoaded', () => {
+        updateIstanbulStatus();
+        renderProducts();
+        renderColorShowcase(0);
+        renderGallery();
+        initAnimations();
+        lucide.createIcons();
+      });
+    })();
+  </script>
+</body>
+</html>
