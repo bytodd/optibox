@@ -600,8 +600,8 @@
           <p id="login-error" class="hidden text-xs font-semibold text-red-600 mt-2">Hatalı şifre! Seçtiğiniz rol için şifreyi kontrol edin.</p>
         </div>
 
-        <button type="submit" class="w-full py-3.5 rounded-xl bg-emeraldDeep hover:bg-emeraldRich text-white font-display font-bold text-sm shadow-md transition-colors">
-          Giriş Yap
+        <button id="login-submit-btn" type="submit" class="w-full py-3.5 rounded-xl bg-emeraldDeep hover:bg-emeraldRich text-white font-display font-bold text-sm shadow-md transition-colors flex items-center justify-center gap-2">
+          <span>Giriş Yap</span>
         </button>
       </form>
     </div>
@@ -851,10 +851,8 @@
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
     /* =========================================================================
-       0. YÖNETİM ŞİFRELERİ (İstediğiniz zaman buradan değiştirebilirsiniz)
+       0. SUNUCU TABANLI OTURUM AYARI (Şifreler sadece Vercel sunucusunda tutulur)
        ========================================================================= */
-    const ADMIN_SIFRE  = "optibox2026"; // 👑 Yönetici (Tam Yetki)
-    const EDITOR_SIFRE = "urun2026";    // 📦 Alt Kullanıcı (Sadece Ürünler)
     const SESSION_ROLE_KEY = "optibox_session_role";
 
     /* =========================================================================
@@ -1495,6 +1493,7 @@
     const loginForm = document.getElementById("login-form");
     const loginInput = document.getElementById("login-password-input");
     const loginError = document.getElementById("login-error");
+    const loginSubmitBtn = document.getElementById("login-submit-btn");
     const roleBtnAdmin = document.getElementById("role-btn-admin");
     const roleBtnEditor = document.getElementById("role-btn-editor");
     const roleHintText = document.getElementById("role-hint-text");
@@ -1546,21 +1545,52 @@
       loginModal.classList.remove("flex");
     }
 
-    loginForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const val = loginInput.value;
-      const valid = (selectedLoginRole === "admin" && val === ADMIN_SIFRE) ||
-                    (selectedLoginRole === "editor" && val === EDITOR_SIFRE);
+      const sifre = loginInput.value;
+      const rol = selectedLoginRole;
 
-      if (valid) {
-        currentRole = selectedLoginRole;
-        try { sessionStorage.setItem(SESSION_ROLE_KEY, currentRole); } catch (err) {}
-        closeLoginModal();
-        openAdminDrawer();
-        showToast(currentRole === "admin" ? "👑 Yönetici olarak giriş yapıldı." : "📦 Ürün Editörü olarak giriş yapıldı.");
-      } else {
+      loginError.classList.add("hidden");
+      loginSubmitBtn.disabled = true;
+      loginSubmitBtn.innerHTML = `<span class="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span><span>Doğrulanıyor...</span>`;
+
+      try {
+        const res = await fetch("/api/giris", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ rol, sifre })
+        });
+
+        let sonuc = {};
+        try {
+          sonuc = await res.json();
+        } catch (parseErr) {
+          sonuc = {};
+        }
+
+        if (res.ok && sonuc.ok) {
+          currentRole = sonuc.rol || rol;
+          try { sessionStorage.setItem(SESSION_ROLE_KEY, currentRole); } catch (err) {}
+          closeLoginModal();
+          openAdminDrawer();
+          showToast(currentRole === "admin" ? "👑 Yönetici olarak giriş yapıldı." : "📦 Ürün Editörü olarak giriş yapıldı.");
+        } else if (res.status === 401) {
+          loginError.textContent = sonuc.mesaj || "Hatalı şifre! Seçtiğiniz rol için şifreyi kontrol edin.";
+          loginError.classList.remove("hidden");
+          loginInput.select();
+        } else if (res.status === 404) {
+          loginError.textContent = "Sunucu doğrulama adresi (/api/giris) bulunamadı. GitHub'da api/giris.js dosyasının yüklü olduğundan emin olun.";
+          loginError.classList.remove("hidden");
+        } else {
+          loginError.textContent = sonuc.mesaj || "Sunucu doğrulama hatası oluştu. Vercel Environment Variables ayarlarını kontrol edin.";
+          loginError.classList.remove("hidden");
+        }
+      } catch (err) {
+        loginError.textContent = "Sunucuya bağlanılamadı. İnternet bağlantınızı veya Vercel yayını kontrol edin.";
         loginError.classList.remove("hidden");
-        loginInput.select();
+      } finally {
+        loginSubmitBtn.disabled = false;
+        loginSubmitBtn.innerHTML = `<span>Giriş Yap</span>`;
       }
     });
 
